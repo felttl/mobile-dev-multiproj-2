@@ -1,5 +1,6 @@
 # dev-mobile-multiproj
-a new repo for mobile apple development
+My new repo for mobile apple development
+(all of my projects)
 
 
 
