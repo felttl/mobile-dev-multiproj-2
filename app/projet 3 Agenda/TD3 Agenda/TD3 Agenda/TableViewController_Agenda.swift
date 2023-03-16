@@ -30,20 +30,22 @@ class TableViewController_Agenda: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 4
+        return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return self.tousLesEvenements.count
     }
     
     // edit les cellules
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "celluleEvenement", for: indexPath)
+        // raccourcir le code :
+        var ligne = self.tousLesEvenements[indexPath.row]
         // Configure the cell...
-        cell.
+        cell.textLabel?.text = ligne.getTitre()
+        cell.detailTextLabel?.text = "\(ligne.getLieu()) \(ligne.getDuree()) minutes"
 
         return cell
     }

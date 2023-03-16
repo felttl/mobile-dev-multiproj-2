@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "66EBFA20-9BE0-48E2-A48B-86740B43AEC4"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3CFCAFE2-8540-47E8-BF78-3614B573EA30"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TD3 Agenda/TableViewController_Agenda.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E844EE6C-6AE2-4E3B-B67C-84C5365D7842"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TD3 Agenda/TableViewController_Agenda.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "tableView(_:numberOfRowsInSection:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "85F818D1-C685-48F3-A359-B67225877C73"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TD3 Agenda/TableViewController_Agenda.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "numberOfSections(in:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CDC3833E-53E7-4B33-A8E0-EE52D24D8FAA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TD3 Agenda/TableViewController_Agenda.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BE44B310-1713-4F7A-9458-C37C430D4FD0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TD3 Agenda/TableViewController_Agenda.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "TableViewController_Agenda"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "BE44B310-1713-4F7A-9458-C37C430D4FD0 - 50c919b16ee203bb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TD3_Agenda.TableViewController_Agenda.__allocating_init(style: __C.UITableViewStyle) -&gt; TD3_Agenda.TableViewController_Agenda"
+                  moduleName = "TD3 Agenda"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ftthat/Desktop/GitHub/dev-mobile-multiproj/app/projet%203%20Agenda/TD3%20Agenda/TD3%20Agenda/TableViewController_Agenda.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "BE44B310-1713-4F7A-9458-C37C430D4FD0 - 39649fe31858d0e0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TD3_Agenda.TableViewController_Agenda.init(style: __C.UITableViewStyle) -&gt; TD3_Agenda.TableViewController_Agenda"
+                  moduleName = "TD3 Agenda"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ftthat/Desktop/GitHub/dev-mobile-multiproj/app/projet%203%20Agenda/TD3%20Agenda/TD3%20Agenda/TableViewController_Agenda.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "BE44B310-1713-4F7A-9458-C37C430D4FD0 - 63b65985d12a99b3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TD3_Agenda.TableViewController_Agenda.__allocating_init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; TD3_Agenda.TableViewController_Agenda"
+                  moduleName = "TD3 Agenda"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ftthat/Desktop/GitHub/dev-mobile-multiproj/app/projet%203%20Agenda/TD3%20Agenda/TD3%20Agenda/TableViewController_Agenda.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "BE44B310-1713-4F7A-9458-C37C430D4FD0 - 377e1ab46d37e890"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TD3_Agenda.TableViewController_Agenda.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; TD3_Agenda.TableViewController_Agenda"
+                  moduleName = "TD3 Agenda"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ftthat/Desktop/GitHub/dev-mobile-multiproj/app/projet%203%20Agenda/TD3%20Agenda/TD3%20Agenda/TableViewController_Agenda.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  uuid = "BE44B310-1713-4F7A-9458-C37C430D4FD0 - e79a04ef7dbe416f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TD3_Agenda.TableViewController_Agenda.__allocating_init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;TD3_Agenda.TableViewController_Agenda&gt;"
+                  moduleName = "TD3 Agenda"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ftthat/Desktop/GitHub/dev-mobile-multiproj/app/projet%203%20Agenda/TD3%20Agenda/TD3%20Agenda/TableViewController_Agenda.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "BE44B310-1713-4F7A-9458-C37C430D4FD0 - 16b692271a2d791a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TD3_Agenda.TableViewController_Agenda.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;TD3_Agenda.TableViewController_Agenda&gt;"
+                  moduleName = "TD3 Agenda"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ftthat/Desktop/GitHub/dev-mobile-multiproj/app/projet%203%20Agenda/TD3%20Agenda/TD3%20Agenda/TableViewController_Agenda.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "BE44B310-1713-4F7A-9458-C37C430D4FD0 - 661fd34e0b728be4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TD3_Agenda.TableViewController_Agenda.__deallocating_deinit"
+                  moduleName = "TD3 Agenda"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ftthat/Desktop/GitHub/dev-mobile-multiproj/app/projet%203%20Agenda/TD3%20Agenda/TD3%20Agenda/TableViewController_Agenda.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
