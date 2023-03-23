@@ -15,8 +15,8 @@
 		8E49169829CB1A40000D0863 /* alcoole_mie_avec_segueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E49169729CB1A40000D0863 /* alcoole_mie_avec_segueTests.swift */; };
 		8E4916A229CB1A40000D0863 /* alcoole_mie_avec_segueUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4916A129CB1A40000D0863 /* alcoole_mie_avec_segueUITests.swift */; };
 		8E4916A429CB1A40000D0863 /* alcoole_mie_avec_segueUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4916A329CB1A40000D0863 /* alcoole_mie_avec_segueUITestsLaunchTests.swift */; };
-		8E4916B129CB1AEE000D0863 /* recup_cloolémie_controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4916B029CB1AEE000D0863 /* recup_cloolémie_controller.swift */; };
 		8E4916B329CB2029000D0863 /* main_alcool_controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4916B229CB2029000D0863 /* main_alcool_controller.swift */; };
+		8EAA3BB429CC3DE300D96861 /* recupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EAA3BB329CC3DE300D96861 /* recupViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,8 +49,8 @@
 		8E49169D29CB1A40000D0863 /* alcoolémie_avec_segueUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "alcoolémie_avec_segueUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E4916A129CB1A40000D0863 /* alcoole_mie_avec_segueUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alcoole_mie_avec_segueUITests.swift; sourceTree = "<group>"; };
 		8E4916A329CB1A40000D0863 /* alcoole_mie_avec_segueUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alcoole_mie_avec_segueUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		8E4916B029CB1AEE000D0863 /* recup_cloolémie_controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "recup_cloolémie_controller.swift"; sourceTree = "<group>"; };
 		8E4916B229CB2029000D0863 /* main_alcool_controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main_alcool_controller.swift; sourceTree = "<group>"; };
+		8EAA3BB329CC3DE300D96861 /* recupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recupViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,8 +104,8 @@
 				8E49168029CB1A3F000D0863 /* AppDelegate.swift */,
 				8E49168229CB1A3F000D0863 /* SceneDelegate.swift */,
 				8E49168629CB1A3F000D0863 /* Main.storyboard */,
+				8EAA3BB329CC3DE300D96861 /* recupViewController.swift */,
 				8E4916B229CB2029000D0863 /* main_alcool_controller.swift */,
-				8E4916B029CB1AEE000D0863 /* recup_cloolémie_controller.swift */,
 				8E49168929CB1A3F000D0863 /* Assets.xcassets */,
 				8E49168B29CB1A3F000D0863 /* LaunchScreen.storyboard */,
 				8E49168E29CB1A3F000D0863 /* Info.plist */,
@@ -262,8 +262,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E4916B329CB2029000D0863 /* main_alcool_controller.swift in Sources */,
-				8E4916B129CB1AEE000D0863 /* recup_cloolémie_controller.swift in Sources */,
 				8E49168129CB1A3F000D0863 /* AppDelegate.swift in Sources */,
+				8EAA3BB429CC3DE300D96861 /* recupViewController.swift in Sources */,
 				8E49168329CB1A3F000D0863 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
