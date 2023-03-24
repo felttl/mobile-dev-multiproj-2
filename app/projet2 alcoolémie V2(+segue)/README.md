@@ -3,7 +3,7 @@
 # show final Segue Result
 
 
-<img src="./view_segue">
+<img src="./view_segue.png">
 
 
 
