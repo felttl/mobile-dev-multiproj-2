@@ -1,13 +1,13 @@
 //
-//  alcoole_mie_avec_segueUITestsLaunchTests.swift
-//  alcoolémie_avec_segueUITests
+//  main_tauxalcool_segueUITestsLaunchTests.swift
+//  main_tauxalcool_segueUITests
 //
-//  Created by Felix Ton that-Lavarini on 22/03/2023.
+//  Created by Felix Ton that-Lavarini on 24/03/2023.
 //
 
 import XCTest
 
-final class alcoole_mie_avec_segueUITestsLaunchTests: XCTestCase {
+final class main_tauxalcool_segueUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

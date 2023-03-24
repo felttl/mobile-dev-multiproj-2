@@ -1,26 +1,26 @@
 //
-//  recupViewController.swift
-//  alcoolémie_avec_segue
+//  segue2Controller.swift
+//  main_tauxalcool_segue
 //
-//  Created by Felix Ton that-Lavarini on 23/03/2023.
+//  Created by Felix Ton that-Lavarini on 24/03/2023.
 //
 
 import UIKit
 
-class recupViewController: UIViewController {
+class segue2Controller: UIViewController {
 
+    // récupère la donnée de la segue principale
     @IBOutlet weak var recupLab: UILabel!
-    // pas nécessaire la première segue insére au clique les données
-    // dans recupLab
-    var recupTaux : Double = 0.0
-
-    
-    
+    // public car pas de méthodes pour récupérer cette variable autrement
+    public var recupAlcoolTX : Double = 0
     override func viewDidLoad() {
         super.viewDidLoad()
+        // met la valeur transmise dans la chaine
+        // (TRANSITION OBLIGATOIRE)
+        self.recupLab.text = String(self.recupAlcoolTX)
         // Do any additional setup after loading the view.
-        
     }
+    
     
 
     /*

@@ -1,13 +1,13 @@
 //
-//  alcoole_mie_avec_segueUITests.swift
-//  alcoolémie_avec_segueUITests
+//  main_tauxalcool_segueUITests.swift
+//  main_tauxalcool_segueUITests
 //
-//  Created by Felix Ton that-Lavarini on 22/03/2023.
+//  Created by Felix Ton that-Lavarini on 24/03/2023.
 //
 
 import XCTest
 
-final class alcoole_mie_avec_segueUITests: XCTestCase {
+final class main_tauxalcool_segueUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
