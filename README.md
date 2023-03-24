@@ -1,4 +1,4 @@
-<div bgcolor="#888888">
+<div bgcolor="grey">
   
 # mobile-dev-multiproj
 #### My new repo for mobile apple development
