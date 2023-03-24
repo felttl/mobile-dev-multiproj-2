@@ -1,4 +1,4 @@
-<div bgcolor="grey">
+
   
 # mobile-dev-multiproj
 #### My new repo for mobile apple development
@@ -12,4 +12,4 @@
 
 
 // end page
-</div>
+
