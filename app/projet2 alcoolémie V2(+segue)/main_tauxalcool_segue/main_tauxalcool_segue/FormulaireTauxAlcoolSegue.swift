@@ -9,7 +9,6 @@ import UIKit
 
 class FormulaireTauxAlcoolSegue: UIViewController {
 
-    
     // prises :
     
     @IBOutlet weak var poids: UITextField!
@@ -32,7 +31,6 @@ class FormulaireTauxAlcoolSegue: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    
     // récupérération des données au touché du clique
     private func calculer_taux(_ lepoids:Double, _ laqte:Int, _ deg:Double, _ sexe:Int)->Double{
         var taux : Double = 0.0
@@ -41,7 +39,6 @@ class FormulaireTauxAlcoolSegue: UIViewController {
         taux = Double(laqte)*10*(deg)*0.8/lepoids*coeff
         return taux
     }
-    
     // actions onclick
     @IBAction func submit(_ sender: Any) {
         // in résoud les problème si la personne ne saisit rien
@@ -66,12 +63,7 @@ class FormulaireTauxAlcoolSegue: UIViewController {
 
         
     }
-    
-    
-    
-    
-    
-    
+
     // MARK: - Navigation
 
     // pour la segue suivante (préparation)
@@ -85,6 +77,5 @@ class FormulaireTauxAlcoolSegue: UIViewController {
         }
         
     }
-    
      
 }
