@@ -14,17 +14,17 @@
 
 
 
-! = 8
-{ = alt opt + 5 
-} = alt opt + )
-[ = alt opt +maj/shift + 5
-] = alt top + shift + ]
-\  = alt opt + maj + /
-Capture d’écran = Maj + command + 4
-Crier a la volée : alt opt + clique gauche
-| = alt opt + maj + l
-Zooming = command + = + +
-Un zooming = command + = + -
+! = 8<br>
+{ = alt opt + 5 <br>
+} = alt opt + )<br>
+[ = alt opt +maj/shift + 5<br>
+] = alt top + shift + ]<br>
+\  = alt opt + maj + /<br>
+Capture d’écran = Maj + command + 4<br>
+Crier a la volée : alt opt + clique gauche<br>
+| = alt opt + maj + l<br>
+Zooming = command + = + +<br>
+Un zooming = command + = + -<br>
 
 ### tips (FR): 
 
@@ -42,16 +42,15 @@ identifier quoi avoir exactement la même syntaxe
 
 Title
 Machin et section (c’est le header de la page)
-<pre>
-Faire un TableViewControler customisé :
-    - [ ] on créé un projet
-    - [ ] on supprime ViewControler
-    - [ ] On créer un nouveau fichier avec l’onglet fichier en haut a gauche
-    - [ ] On créer un template Cocoa Touch Class
-    - [ ] On créer tout ça dans le bon répertoire qui est demandé
-    - [ ] Écriture dans des fichiers ou non
-    
-</pre>
+
+Faire un TableViewControler customisé :<br>
+    - [ ] on créé un projet<br>
+    - [ ] on supprime ViewControler<br>
+    - [ ] On créer un nouveau fichier avec l’onglet fichier en haut a gauche<br>
+    - [ ] On créer un template Cocoa Touch Class<br>
+    - [ ] On créer tout ça dans le bon répertoire qui est demandé<br>
+    - [ ] Écriture dans des fichiers ou non<br>
+
 
 
 // end page
