@@ -30,14 +30,19 @@ Un zooming = command + = + -
 
 Pour lier la vue au code il faut aller dans le panel paramètre a droite et cocher en dessous du titre is initiale machin
 
-Pour les éléments liste déroulante avec ,,, il faut lier l’identifier écrit dans latableView avec l’élément de l’interface dans le table View contrôler nommé : « TableView » et ensuite dans le volet de droite partie paramètre identifier quoi avoir exactement la même syntaxe (très sensible a la casse )
+Pour les éléments liste déroulante avec ,,, il faut lier 
+l’identifier écrit dans latableView avec l’élément de 
+l’interface dans le table View contrôler nommé : « TableView » 
+et ensuite dans le volet de droite partie paramètre 
+identifier quoi avoir exactement la même syntaxe 
+(très sensible a la casse )
 
 
 ### parts views :
 
 Title
 Machin et section (c’est le header de la page)
-
+<pre>
 Faire un TableViewControler customisé :
     - [ ] on créé un projet
     - [ ] on supprime ViewControler
@@ -46,7 +51,7 @@ Faire un TableViewControler customisé :
     - [ ] On créer tout ça dans le bon répertoire qui est demandé
     - [ ] Écriture dans des fichiers ou non
     
-
+</pre>
 
 
 // end page
