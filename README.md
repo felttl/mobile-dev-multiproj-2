@@ -38,7 +38,7 @@ identifier quoi avoir exactement la même syntaxe
 (très sensible a la casse )
 
 
-### parts views :
+### parts views : 
 
 Title
 Machin et section (c’est le header de la page)
