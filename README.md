@@ -21,7 +21,7 @@
 ] = alt top + shift + ]<br>
 \  = alt opt + maj + /<br>
 Capture d’écran = Maj + command + 4<br>
-Crier a la volée : alt opt + clique gauche<br>
+Copier a la volée : alt opt + clique gauche<br>
 | = alt opt + maj + l<br>
 Zooming = command + = + +<br>
 Un zooming = command + = + -<br>
