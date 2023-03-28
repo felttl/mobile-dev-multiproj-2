@@ -6,17 +6,39 @@
 //
 
 import UIKit
-
+// @main = @UIApplicationMain
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    // stocke tous les évènements
+    private static var tousLesEvenements: [Evenement]=[]
 
-
+    // OVERLOADED function
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // on charge les évènements en JSON
+        AppDelegate.tousLesEvenements = Les_Evenements.chargementJSON()
         return true
     }
-
+    
+    
+    // custom functs
+    public static func getTousLesEvenements()->[Evenement]{
+        return AppDelegate.tousLesEvenements
+    }
+    public static func ajouterEvenement(_ objEvenement: Evenement){
+        AppDelegate.tousLesEvenements.append(objEvenement)
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {

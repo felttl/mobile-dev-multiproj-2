@@ -17,6 +17,8 @@
 		8EC71D0F29D32939003ADA44 /* TD4_fichier_JSONUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC71D0E29D32939003ADA44 /* TD4_fichier_JSONUITestsLaunchTests.swift */; };
 		8EC71D1C29D32A9F003ADA44 /* Agenda_Enrichie_Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC71D1B29D32A9F003ADA44 /* Agenda_Enrichie_Controller.swift */; };
 		8EC71D1E29D32F23003ADA44 /* Ajouter_Evenement_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC71D1D29D32F23003ADA44 /* Ajouter_Evenement_VC.swift */; };
+		8EC71D2229D339DE003ADA44 /* Les_Evenements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC71D2129D339DE003ADA44 /* Les_Evenements.swift */; };
+		8EC71D2429D33A62003ADA44 /* Evenement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC71D2329D33A62003ADA44 /* Evenement.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		8EC71D0E29D32939003ADA44 /* TD4_fichier_JSONUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TD4_fichier_JSONUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8EC71D1B29D32A9F003ADA44 /* Agenda_Enrichie_Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Agenda_Enrichie_Controller.swift; sourceTree = "<group>"; };
 		8EC71D1D29D32F23003ADA44 /* Ajouter_Evenement_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ajouter_Evenement_VC.swift; sourceTree = "<group>"; };
+		8EC71D2129D339DE003ADA44 /* Les_Evenements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Les_Evenements.swift; sourceTree = "<group>"; };
+		8EC71D2329D33A62003ADA44 /* Evenement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Evenement.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,8 @@
 				8EC71CED29D32938003ADA44 /* SceneDelegate.swift */,
 				8EC71CF129D32938003ADA44 /* Main.storyboard */,
 				8EC71D1D29D32F23003ADA44 /* Ajouter_Evenement_VC.swift */,
+				8EC71D2129D339DE003ADA44 /* Les_Evenements.swift */,
+				8EC71D2329D33A62003ADA44 /* Evenement.swift */,
 				8EC71D1B29D32A9F003ADA44 /* Agenda_Enrichie_Controller.swift */,
 				8EC71CF429D32939003ADA44 /* Assets.xcassets */,
 				8EC71CF629D32939003ADA44 /* LaunchScreen.storyboard */,
@@ -263,6 +269,8 @@
 			files = (
 				8EC71D1C29D32A9F003ADA44 /* Agenda_Enrichie_Controller.swift in Sources */,
 				8EC71D1E29D32F23003ADA44 /* Ajouter_Evenement_VC.swift in Sources */,
+				8EC71D2229D339DE003ADA44 /* Les_Evenements.swift in Sources */,
+				8EC71D2429D33A62003ADA44 /* Evenement.swift in Sources */,
 				8EC71CEC29D32938003ADA44 /* AppDelegate.swift in Sources */,
 				8EC71CEE29D32938003ADA44 /* SceneDelegate.swift in Sources */,
 			);

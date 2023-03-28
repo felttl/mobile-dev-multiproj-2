@@ -18,16 +18,20 @@ class Ajouter_Evenement_VC: UIViewController {
     
     
     // récupération
-    private var titre : String
-    private var lieu : String
-    private var début : String
-    private var durée : String
+    public var titre : String = ""
+    public var lieu : String = ""
+    public var début : String = ""
+    public var durée : String = ""
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        // quand on se déplace ici
+        // au cas ou le main controller envoie des données ici
+        self.Titre.text = self.titre
+        self.Lieu.text = self.lieu
+        self.Début.text = self.début
+        self.Durée.text = self.durée
     }
 
     // on canceling
@@ -40,7 +44,20 @@ class Ajouter_Evenement_VC: UIViewController {
     
     // validate form
     @IBAction func add_event(_ sender: Any) {
-        
+        // les champs sont non vides :
+        if (self.Titre != nil ||
+            self.Lieu.text != nil ||
+            self.Début.text != nil ||
+            self.Durée.text != nil){
+            // on ajoute les données dans le fichier JSON
+        }
+    }
+    
+    
+    // save + leave
+    @IBAction func add_and_leave(_ sender: Any) {
+        self.add_event("")
+        // on quitte
     }
     
     
