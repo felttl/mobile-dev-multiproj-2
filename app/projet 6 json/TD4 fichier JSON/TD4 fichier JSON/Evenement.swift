@@ -7,14 +7,14 @@
 
 import Foundation
 
-class Evenement{
+class Evenement: Codable{
     private var titre : String
     private var lieu : String  // enum ?
     private var debut : String
     private var duree : Int // en minutes
     
     // constructeur
-    public init(leTitre:String, leLieu: String, leDebut: String, laDuree:Int){
+    public init(_ leTitre:String,_ leLieu: String,_ leDebut: String,_ laDuree:Int){
         self.titre = leTitre
         self.lieu = leLieu
         self.debut = leDebut

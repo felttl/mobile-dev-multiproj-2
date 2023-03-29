@@ -21,7 +21,7 @@ class Ajouter_Evenement_VC: UIViewController {
     public var titre : String = ""
     public var lieu : String = ""
     public var début : String = ""
-    public var durée : String = ""
+    public var durée : Int = 0 // en minutes
     
     
     override func viewDidLoad() {
@@ -31,7 +31,7 @@ class Ajouter_Evenement_VC: UIViewController {
         self.Titre.text = self.titre
         self.Lieu.text = self.lieu
         self.Début.text = self.début
-        self.Durée.text = self.durée
+        self.Durée.text = String(self.durée)
     }
 
     // on canceling
@@ -49,7 +49,15 @@ class Ajouter_Evenement_VC: UIViewController {
             self.Lieu.text != nil ||
             self.Début.text != nil ||
             self.Durée.text != nil){
-            // on ajoute les données dans le fichier JSON
+            // on ajoute un objet Evenement dans la liste des évènements
+            // (attention pas encore dans le Json)
+            AppDelegate.ajouterEvenement(
+                Evenement(String(self.Titre.text!),
+                          String(self.Lieu.text!),
+                          String(self.Début.text!),
+                          Int(self.Durée.text!)!
+                )
+            )
         }
     }
     
@@ -57,7 +65,10 @@ class Ajouter_Evenement_VC: UIViewController {
     // save + leave
     @IBAction func add_and_leave(_ sender: Any) {
         self.add_event("")
+        // on ajoute les données de la classe Les_Evenements dans le fichier JSON
+        
         // on quitte
+        
     }
     
     
