@@ -143,18 +143,19 @@
                     </tabBar>
                     <connections>
                         <segue destination="COm-LV-mkN" kind="relationship" relationship="viewControllers" id="kPJ-c4-u0K"/>
+                        <segue destination="cae-Lu-rux" kind="show" id="CDh-2Q-3NV"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nhp-2k-m1p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-390" y="-208"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Afficher Evt Table View Controller-->
         <scene sceneID="CFU-zd-hJi">
             <objects>
-                <tableViewController id="cae-Lu-rux" sceneMemberID="viewController">
+                <tableViewController id="cae-Lu-rux" customClass="AfficherEvtTableViewController" customModule="TD4_fichier_JSON" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="zgL-8q-Bai">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -188,10 +189,11 @@
                             <outlet property="delegate" destination="cae-Lu-rux" id="oye-ct-d15"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="1pj-Wv-d23"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="npG-vN-doB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="497" y="133"/>
+            <point key="canvasLocation" x="523" y="131"/>
         </scene>
     </scenes>
     <resources>

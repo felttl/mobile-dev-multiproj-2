@@ -13,11 +13,10 @@ class Les_Evenements{
     // écrit dans un fichier
     public static func ecritureJSON(_ tousLesEvenements: [Evenement]){
         let ecrire = JSONEncoder()
-        // spécifie le format de sortie
         ecrire.
         // on doit d'abord écraser les données précédentes si on a déja modifié / créé dess fichiers
         // on recrée ensuite un nouveau fichier pour mettre toutes les données à jour
-        let data = try ecrire.encode(Evenement)
+        let data : Data = try Data(contentsOf: )
         
     }
     

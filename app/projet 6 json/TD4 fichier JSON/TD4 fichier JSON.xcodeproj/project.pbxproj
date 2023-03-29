@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8E3D9A9629D42D0900A46609 /* Afficher_Evenements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3D9A9529D42D0900A46609 /* Afficher_Evenements.swift */; };
+		8E3D9A9829D4479C00A46609 /* AfficherEvtTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3D9A9729D4479C00A46609 /* AfficherEvtTableViewController.swift */; };
 		8EC71CEC29D32938003ADA44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC71CEB29D32938003ADA44 /* AppDelegate.swift */; };
 		8EC71CEE29D32938003ADA44 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC71CED29D32938003ADA44 /* SceneDelegate.swift */; };
 		8EC71CF329D32938003ADA44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EC71CF129D32938003ADA44 /* Main.storyboard */; };
@@ -40,7 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8E3D9A9529D42D0900A46609 /* Afficher_Evenements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Afficher_Evenements.swift; sourceTree = "<group>"; };
+		8E3D9A9729D4479C00A46609 /* AfficherEvtTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfficherEvtTableViewController.swift; sourceTree = "<group>"; };
 		8EC71CE829D32938003ADA44 /* TD4 fichier JSON.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TD4 fichier JSON.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EC71CEB29D32938003ADA44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8EC71CED29D32938003ADA44 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,10 +107,10 @@
 		8EC71CEA29D32938003ADA44 /* TD4 fichier JSON */ = {
 			isa = PBXGroup;
 			children = (
+				8E3D9A9729D4479C00A46609 /* AfficherEvtTableViewController.swift */,
 				8EC71CEB29D32938003ADA44 /* AppDelegate.swift */,
 				8EC71CED29D32938003ADA44 /* SceneDelegate.swift */,
 				8EC71CF129D32938003ADA44 /* Main.storyboard */,
-				8E3D9A9529D42D0900A46609 /* Afficher_Evenements.swift */,
 				8EC71D1D29D32F23003ADA44 /* Ajouter_Evenement_VC.swift */,
 				8EC71D2129D339DE003ADA44 /* Les_Evenements.swift */,
 				8EC71D2329D33A62003ADA44 /* Evenement.swift */,
@@ -275,7 +275,7 @@
 				8EC71D2229D339DE003ADA44 /* Les_Evenements.swift in Sources */,
 				8EC71D2429D33A62003ADA44 /* Evenement.swift in Sources */,
 				8EC71CEC29D32938003ADA44 /* AppDelegate.swift in Sources */,
-				8E3D9A9629D42D0900A46609 /* Afficher_Evenements.swift in Sources */,
+				8E3D9A9829D4479C00A46609 /* AfficherEvtTableViewController.swift in Sources */,
 				8EC71CEE29D32938003ADA44 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

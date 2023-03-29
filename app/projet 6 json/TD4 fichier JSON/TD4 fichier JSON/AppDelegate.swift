@@ -10,7 +10,7 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    // stocke tous les évènements
+    // stocke tous les évènements (utilisable partout)
     private static var tousLesEvenements: [Evenement]=[]
 
     // OVERLOADED function
@@ -31,7 +31,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AppDelegate.tousLesEvenements.append(objEvenement)
     }
     
-    
+    // variable privée donc on fais une fonction pour renvoyer le contenu
+    public static func getAllEvents()->[Evenement]{
+        return AppDelegate.tousLesEvenements
+    }
     
     
     
