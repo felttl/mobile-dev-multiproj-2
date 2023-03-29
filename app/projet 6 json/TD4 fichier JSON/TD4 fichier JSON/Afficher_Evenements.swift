@@ -9,12 +9,20 @@ import UIKit
 
 class Afficher_Evenements: UIViewController {
 
-    public var Les_Evenements = [Evenement]
+    public var Les_Evenements : [Evenement] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        // afichage un par un ?
+        for evenement in self.Les_Evenements{
+            
+        }
+        
+        override func numberOFSections()->Int{
+            return Les_Evenements.count
+            
+        }
+        
     }
     
 
