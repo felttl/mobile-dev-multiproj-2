@@ -7,6 +7,8 @@
 
 import Foundation
 
+
+// Codable --> to JSON
 class Evenement: Codable{
     private var titre : String
     private var lieu : String  // enum ?

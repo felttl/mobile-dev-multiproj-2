@@ -32,7 +32,7 @@ class Agenda_Enrichie_Controller: UIViewController {
             recupViewController.titre = ""
             recupViewController.lieu = ""
             recupViewController.début = ""
-            recupViewController.durée = ""
+            recupViewController.durée = 0
             
         }
     }
