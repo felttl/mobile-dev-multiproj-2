@@ -33,15 +33,21 @@ class Les_Mots: Codable { // créée un "les mots" pour simplifier les tri de gr
     
     // créer le fichier et ce qui est nécessaire si ce n'est pas le cas
     // sinon charge dirrectement les donnnées avec loadJSON
-    public func pre_loadJSON()->[Mot]{
+    public func preLoadJSON()->[Mot]{
         var resultMots : [Mot] = []
         let monUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("data.json")
         if (FileManager.default.fileExists(atPath: "data.json")){
-            resultMots = self.loadJSON(monUrl)
+            if (self.loadJSON(monUrl) == nil){
+                resultMots = []
+            } else {
+                resultMots = self.loadJSON(monUrl)!
+            }
+            
         } else {
             print("le fichier n'existe pas")
             exit(0)
         }
+        return resultMots
     }
     
     public func loadJSON(_ uneurl: URL)->[Mot]?{
@@ -59,7 +65,7 @@ class Les_Mots: Codable { // créée un "les mots" pour simplifier les tri de gr
     
 
     // renvoie une liste de mots triés
-    public static func trier_str_list()->[[String]]{
+    public static func trierStrList()->[[String]]{
         // plus tard
         
         // je peux juste renvoyer une liste de mots
@@ -81,7 +87,7 @@ class Les_Mots: Codable { // créée un "les mots" pour simplifier les tri de gr
     }
     
     // renvoie le mot si trouvé sinon chaine : "erreur pas trouvé !!!"
-    public func chercher_mot(_ unmot: Mot)->Mot?{
+    public func chercherMot(_ unmot: Mot)->Mot?{
         var result : Mot? = nil
         if (self.tousLesMots.count != 0){
             var cpt = 0
@@ -102,7 +108,7 @@ class Les_Mots: Codable { // créée un "les mots" pour simplifier les tri de gr
     }
     
     // renvoie du texte en fonction de l'erreur
-    public func get_txt_err()->String{
+    public func getTxtErr()->String{
         var res : String
         switch self.err {
             case 1:
@@ -111,6 +117,8 @@ class Les_Mots: Codable { // créée un "les mots" pour simplifier les tri de gr
                 res = "dans 'chercher_mot()' le mot n'as pas été trouvé"
             case 3:
                 res = "dans 'chercher_mot()' une erreur a été remarqué"
+            case 4:
+                res = "dans 'pre_loadJSON()' le fichier n'existe pas'"
         default:
             res = ""
         }
