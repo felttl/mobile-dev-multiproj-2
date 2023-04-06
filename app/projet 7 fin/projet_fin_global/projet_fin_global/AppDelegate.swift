@@ -11,10 +11,13 @@ import CoreData
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    public static var mots : Les_Mots = Les_Mots()
+    public static var mots : [Mot]?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // chargement des données :
+        AppDelegate.mots = Les_Mots.
         return true
     }
 

@@ -28,7 +28,7 @@ class Ajouter_Mot_View_Controller: UIViewController {
             AppDelegate.mots.tous_les_mots.append(Mot(self.mot_fr_field.text!, self.mot_en_field.text!))
             self.err.text = " fichier correctement sauvegardé"
         } else {
-            self.err.text = "erreur"
+            self.err.text = "erreur saisie invalide"
         }
         
     }

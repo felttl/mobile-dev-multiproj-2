@@ -79,7 +79,6 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Ajouter le mot"/>
                                 <connections>
                                     <action selector="ajouter_mot_btn" destination="LtX-eR-usz" eventType="touchUpInside" id="Ygd-Ux-VXe"/>
-                                    <action selector="submit" destination="fB3-vL-zet" eventType="touchUpInside" id="wNw-fB-0j7"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4x-Oe-FQM">
@@ -149,7 +148,6 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Obtenir la traduction"/>
                                 <connections>
-                                    <action selector="submit" destination="fB3-vL-zet" eventType="touchUpInside" id="zaz-9E-iqZ"/>
                                     <action selector="traduire" destination="fB3-vL-zet" eventType="touchUpInside" id="quH-ao-0vU"/>
                                 </connections>
                             </button>
@@ -194,7 +192,7 @@
         <!--Visualiser-->
         <scene sceneID="6dr-aV-4EP">
             <objects>
-                <tableViewController id="qrF-Al-r2z" sceneMemberID="viewController">
+                <tableViewController id="qrF-Al-r2z" customClass="Visualiser_TableViewController" customModule="projet_fin_global" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Guz-Cv-okS">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -240,7 +238,7 @@
         <!--Version-->
         <scene sceneID="o1A-gL-3rI">
             <objects>
-                <viewController title="Version" id="6Be-1m-Sur" sceneMemberID="viewController">
+                <viewController title="Version" id="6Be-1m-Sur" customClass="Version_View_Controller" customModule="projet_fin_global" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QOO-Wa-27j">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -252,8 +250,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="saisir la traduction du mot ci-dessous :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rVS-lZ-Cgp">
-                                <rect key="frame" x="49" y="161" width="295" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="saisir la traduction en français" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" showsExpansionTextWhenTruncated="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rVS-lZ-Cgp">
+                                <rect key="frame" x="49" y="134" width="295" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -281,7 +279,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="vérifier la réponse"/>
                                 <connections>
-                                    <action selector="submit" destination="fB3-vL-zet" eventType="touchUpInside" id="rk6-rf-Be3"/>
+                                    <action selector="on_verif" destination="6Be-1m-Sur" eventType="touchUpInside" id="DfB-Jt-WmP"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="55R-4h-e8Q">
@@ -292,11 +290,43 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MlC-vd-9hA">
+                                <rect key="frame" x="117" y="416" width="161" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WTz-Ye-9hq">
+                                <rect key="frame" x="49" y="172" width="295" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">du mot anglais ci-dessous
+ ci-dessous ci </string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mT1-tA-Pby">
+                                <rect key="frame" x="135" y="472" width="123" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="nouveau mot"/>
+                                <connections>
+                                    <action selector="reload" destination="6Be-1m-Sur" eventType="touchUpInside" id="R3a-by-7wj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="evx-zb-uXQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="version" id="kr0-Sh-Vuf"/>
+                    <connections>
+                        <outlet property="err" destination="MlC-vd-9hA" id="UFr-ei-Gku"/>
+                        <outlet property="input_word" destination="XPP-Al-KXy" id="Qwa-QL-PmO"/>
+                        <outlet property="output_word" destination="55R-4h-e8Q" id="1uO-jF-NPs"/>
+                        <outlet property="show_word" destination="lJh-FJ-xkH" id="5Wa-oS-T7j"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JC0-Nu-uee" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -304,6 +334,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

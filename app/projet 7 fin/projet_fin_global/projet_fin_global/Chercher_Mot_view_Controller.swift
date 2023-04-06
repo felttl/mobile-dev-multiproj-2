@@ -19,7 +19,6 @@ class Chercher_Mot_view_Controller: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.mots = Les_Mots()
         // Do any additional setup after loading the view.
     }
     
@@ -32,7 +31,12 @@ class Chercher_Mot_view_Controller: UIViewController {
             self.input_texte = tf_word_input.text!
             var mot_a_chercher = Mot(self.input_texte)
             AppDelegate.mots.tous_les_mots.append(mot_a_chercher)
-            self.lab_traduit.text = AppDelegate.mots.chercher_mot(mot_a_chercher)
+            if (AppDelegate.mots.chercher_mot(mot_a_chercher) == nil){
+                self.lab_traduit.text = "none"
+                self.str_err.text = AppDelegate.mots.get_txt_err()
+            } else {
+                self.lab_traduit.text = AppDelegate.mots.chercher_mot(mot_a_chercher)!.get_en_anglais()
+            }
             self.str_err.text = "validé avec succés"
         } else {
             // erreur

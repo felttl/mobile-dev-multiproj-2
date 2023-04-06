@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Mot{
+class Mot: Codable{
     
     
     private var en_français : String = ""
