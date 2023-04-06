@@ -29,13 +29,13 @@ class Chercher_Mot_view_Controller: UIViewController {
         // si l'utilisateur a saisi du texte
         if (self.tf_word_input.text != nil){
             self.input_texte = tf_word_input.text!
-            var mot_a_chercher = Mot(self.input_texte)
-            AppDelegate.mots.tous_les_mots.append(mot_a_chercher)
-            if (AppDelegate.mots.chercher_mot(mot_a_chercher) == nil){
+            var mot_a_chercher = Mot(self.input_texte, "")
+            AppDelegate.mots.append(mot_a_chercher)
+            if (Les_Mots(AppDelegate.mots).chercherMot(mot_a_chercher) == nil){
                 self.lab_traduit.text = "none"
-                self.str_err.text = AppDelegate.mots.get_txt_err()
+                self.str_err.text = AppDelegate.tmots.getTxtErr()
             } else {
-                self.lab_traduit.text = AppDelegate.mots.chercher_mot(mot_a_chercher)!.get_en_anglais()
+                self.lab_traduit.text = AppDelegate.tmots.chercherMot(mot_a_chercher)!.get_en_anglais()
             }
             self.str_err.text = "validé avec succés"
         } else {

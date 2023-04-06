@@ -11,13 +11,16 @@ import CoreData
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    public static var mots : [Mot]?
+    // difficile de gérer , chercher un mot dans une liste de cette façon
+    public static var mots : [Mot] = []
+    // pour simplifier la manipulation des "mot" (tri etc..)
+    public static var tmots : Les_Mots = Les_Mots()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        // chargement des données :
-        AppDelegate.mots = Les_Mots.
+        // chargement des données : (met une liste d'objets Mot du type LesMots en type [Mot]
+        AppDelegate.mots = AppDelegate.tmots.preLoadJSON()
         return true
     }
 

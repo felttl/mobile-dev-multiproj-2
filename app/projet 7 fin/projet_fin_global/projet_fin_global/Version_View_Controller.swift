@@ -51,7 +51,7 @@ class Version_View_Controller: UIViewController {
     // va chercher un mot aléatoire de laliste des mots et
     // le renvoyer ... ( + système de gestion des errreurs)
     public func get_random_input(){
-        var max_l = AppDelegate.mots.tous_les_mots.count
+        var max_l = AppDelegate.tmots.tousLesMots.count
         
         if (self.déja_vu.count == max_l){
             self.err.text = "vous avez déja saisi tout les mots de la liste"
@@ -63,7 +63,7 @@ class Version_View_Controller: UIViewController {
             while (self.deja_choisi(mot_choisi)){
                 mot_choisi = Int.random(in: 0...max_l-1)
             }
-            self.show_word.text = AppDelegate.mots.tous_les_mots[mot_choisi].get_en_anglais()
+            self.show_word.text = AppDelegate.tmots.tousLesMots[mot_choisi].get_en_anglais()
             self.déja_vu.append(mot_choisi)
         }
     }
@@ -75,10 +75,10 @@ class Version_View_Controller: UIViewController {
         if (self.input_word.text != nil){
             // on traduit du français vers l'anglaisou l'inverse ?
             var le_mot : Mot = Mot(self.input_word.text!, "")
-            if(AppDelegate.mots.chercher_mot(le_mot) != nil){
-                self.output_word.text = AppDelegate.mots.chercher_mot(le_mot)!.get_en_français()
+            if(AppDelegate.tmots.chercherMot(le_mot) != nil){
+                self.output_word.text = AppDelegate.tmots.chercherMot(le_mot)!.get_en_français()
             }
-            self.err.text = AppDelegate.mots.get_txt_err()
+            self.err.text = AppDelegate.tmots.getTxtErr()
             // si déja affiché une erreur
         } else {
             self.err.text = "erreur"

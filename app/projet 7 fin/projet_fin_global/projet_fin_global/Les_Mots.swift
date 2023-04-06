@@ -16,14 +16,12 @@ class Les_Mots: Codable { // créée un "les mots" pour simplifier les tri de gr
     // err 1 = liste vide, 2 = pas trouvé, 3 = ...
     public var err : Int = 0 // defaut c'est bon
     
-    //pas de constructeur
-    
     public func write(_ tousLesMots: [Mot]){
         // singleton
-        var leFM = FileManager.default
-        var lesURL = leFM.urls(for: .documentDirectory, in: .userDomainMask)
-        var laPremUrl = lesURL .first!
-        var monURL = laPremUrl.appendingPathComponent("data.json")
+        let leFM = FileManager.default
+        let lesURL = leFM.urls(for: .documentDirectory, in: .userDomainMask)
+        let laPremUrl = lesURL .first!
+        let monURL = laPremUrl.appendingPathComponent("data.json")
         let dataSavedCoded = try? JSONEncoder().encode(tousLesMots)
         // créé fichier
         FileManager.default.createFile(atPath: monURL.path, contents: dataSavedCoded, attributes: nil)
@@ -37,35 +35,40 @@ class Les_Mots: Codable { // créée un "les mots" pour simplifier les tri de gr
         var resultMots : [Mot] = []
         let monUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("data.json")
         if (FileManager.default.fileExists(atPath: "data.json")){
-            if (self.loadJSON(monUrl) == nil){
-                resultMots = []
-            } else {
-                resultMots = self.loadJSON(monUrl)!
-            }
-            
+            resultMots = self.loadJSON(monUrl)
         } else {
-            print("le fichier n'existe pas")
+            print("class : Les_Mots : erreur : le fichier n'existe pas")
             exit(0)
         }
         return resultMots
     }
     
-    public func loadJSON(_ uneurl: URL)->[Mot]?{
+    public func loadJSON(_ uneurl: URL)->[Mot]{
         do {
             let data = try Data(contentsOf: uneurl)
             let decoder = JSONDecoder()
             let MotsDecodés = try decoder.decode([Mot].self, from: data)
+            self.err = 0
             return MotsDecodés
         } catch {
             self.err = 4
-            print("erreur")
+            print(self.getTxtErr())
         }
-        return nil
+        return []
+    }
+    
+    // permettre certaines sopérations sur les listes de mots :
+    // overloaded
+    public init(_ uneliste: [Mot]){
+        self.tousLesMots = uneliste
+    }
+    public init(){
+        // none
     }
     
 
-    // renvoie une liste de mots triés
-    public static func trierStrList()->[[String]]{
+    // renvoie une liste de mots triés en chaine et non en objet
+    public func trierStrList()->[[String]]{
         // plus tard
         
         // je peux juste renvoyer une liste de mots
@@ -109,16 +112,17 @@ class Les_Mots: Codable { // créée un "les mots" pour simplifier les tri de gr
     
     // renvoie du texte en fonction de l'erreur
     public func getTxtErr()->String{
+        let clsname : String = "class : Les_mots : erreur :"
         var res : String
         switch self.err {
             case 1:
-                res = "Attention liste vide"
+                res = "\(clsname) 'chercher_mot()' Attention liste vide"
             case 2:
-                res = "dans 'chercher_mot()' le mot n'as pas été trouvé"
+                res = "\(clsname) 'chercher_mot()' le mot n'as pas été trouvé"
             case 3:
-                res = "dans 'chercher_mot()' une erreur a été remarqué"
+                res = "\(clsname) 'chercher_mot()' une erreur a été remarqué"
             case 4:
-                res = "dans 'pre_loadJSON()' le fichier n'existe pas'"
+                res = "\(clsname) 'loadJSON()' le fichier n'existe pas"
         default:
             res = ""
         }

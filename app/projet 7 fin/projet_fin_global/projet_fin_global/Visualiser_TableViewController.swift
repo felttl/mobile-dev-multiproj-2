@@ -28,18 +28,17 @@ class Visualiser_TableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return AppDelegate.mots.tous_les_mots.count
+        return AppDelegate.mots.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-        var listfr = AppDelegate.mots.trier_str_list()[0]
-        var listen = AppDelegate.mots.trier_str_list()[1]
-        var ligne = AppDelegate.mots.trier_str_list
+        // on charge la liste de mots TRIES
+        var ligne : [[String]] = AppDelegate.tmots.trierStrList()
         // Configure the cell...
-        cell.textLabel?.text = ligne.get_en_français().uppercased()
-        cell.detailTextLabel?.text = ligne.get_en_anglais()
+        cell.textLabel?.text = ligne[0][indexPath.row].uppercased()
+        cell.detailTextLabel?.text = ligne[0][indexPath.row]
         return cell
     }
     

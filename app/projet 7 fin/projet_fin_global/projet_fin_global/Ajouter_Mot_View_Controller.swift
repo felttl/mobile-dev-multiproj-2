@@ -25,7 +25,7 @@ class Ajouter_Mot_View_Controller: UIViewController {
     @IBAction func ajouter_mot_btn() {
         // on valoriste tout si tout va bien :
         if (self.mot_en_field.text != nil && self.mot_fr_field.text != nil){
-            AppDelegate.mots.tous_les_mots.append(Mot(self.mot_fr_field.text!, self.mot_en_field.text!))
+            AppDelegate.tmots.tousLesMots.append(Mot(self.mot_fr_field.text!, self.mot_en_field.text!))
             self.err.text = " fichier correctement sauvegardé"
         } else {
             self.err.text = "erreur saisie invalide"

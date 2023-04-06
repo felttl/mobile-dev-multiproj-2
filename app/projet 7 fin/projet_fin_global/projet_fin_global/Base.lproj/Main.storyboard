@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8eY-ka-shk">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
@@ -8,14 +8,15 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
+        <!--Main Navigation Controller-->
         <scene sceneID="VcG-Ag-qBi">
             <objects>
-                <tabBarController id="8eY-ka-shk" sceneMemberID="viewController">
+                <tabBarController title="Main Navigation Controller" id="8eY-ka-shk" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="guG-dX-3QE">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <tabBarAppearance key="standardAppearance"/>
                     </tabBar>
                     <connections>
                         <segue destination="qrF-Al-r2z" kind="relationship" relationship="viewControllers" id="PDQ-F6-hTF"/>
@@ -112,10 +113,10 @@
             </objects>
             <point key="canvasLocation" x="-22.137404580152669" y="157.74647887323945"/>
         </scene>
-        <!--Ajouter_mot_Controller-->
+        <!--Chercher_mot_Controller-->
         <scene sceneID="o6a-Ms-D5C">
             <objects>
-                <viewController title="Ajouter_mot_Controller" id="fB3-vL-zet" customClass="Chercher_Mot_view_Controller" customModule="projet_fin_global" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Chercher_mot_Controller" id="fB3-vL-zet" customClass="Chercher_Mot_view_Controller" customModule="projet_fin_global" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Dfh-Wq-hUK">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
