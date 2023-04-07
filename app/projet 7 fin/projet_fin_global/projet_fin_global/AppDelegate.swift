@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // chargement des données : (met une liste d'objets Mot du type LesMots en type [Mot]
         AppDelegate.mots = AppDelegate.tmots.preLoadJSON()
+        
         return true
     }
 

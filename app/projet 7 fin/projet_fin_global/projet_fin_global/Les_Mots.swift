@@ -16,6 +16,8 @@ class Les_Mots: Codable { // créée un "les mots" pour simplifier les tri de gr
     // err 1 = liste vide, 2 = pas trouvé, 3 = ...
     public var err : Int = 0 // defaut c'est bon
     
+    
+    // MARK: - JSON FILE
     public func write(_ tousLesMots: [Mot]){
         // singleton
         let leFM = FileManager.default
@@ -37,7 +39,8 @@ class Les_Mots: Codable { // créée un "les mots" pour simplifier les tri de gr
         if (FileManager.default.fileExists(atPath: "data.json")){
             resultMots = self.loadJSON(monUrl)
         } else {
-            print("class : Les_Mots : erreur : le fichier n'existe pas")
+            
+            print()
             exit(0)
         }
         return resultMots
@@ -57,6 +60,8 @@ class Les_Mots: Codable { // créée un "les mots" pour simplifier les tri de gr
         return []
     }
     
+    
+    // MARK: - InitS
     // permettre certaines sopérations sur les listes de mots :
     // overloaded
     public init(_ uneliste: [Mot]){
@@ -66,7 +71,7 @@ class Les_Mots: Codable { // créée un "les mots" pour simplifier les tri de gr
         // none
     }
     
-
+    // MARK: - functs
     // renvoie une liste de mots triés en chaine et non en objet
     public func trierStrList()->[[String]]{
         // plus tard
@@ -109,12 +114,14 @@ class Les_Mots: Codable { // créée un "les mots" pour simplifier les tri de gr
         }
         return result
     }
-    
+    // MARK: - errors management
     // renvoie du texte en fonction de l'erreur
     public func getTxtErr()->String{
         let clsname : String = "class : Les_mots : erreur :"
         var res : String
         switch self.err {
+            case -1:
+                res = "\(clsname)"
             case 1:
                 res = "\(clsname) 'chercher_mot()' Attention liste vide"
             case 2:
@@ -123,6 +130,8 @@ class Les_Mots: Codable { // créée un "les mots" pour simplifier les tri de gr
                 res = "\(clsname) 'chercher_mot()' une erreur a été remarqué"
             case 4:
                 res = "\(clsname) 'loadJSON()' le fichier n'existe pas"
+            case 5:
+                res = "\(clsname) 'preLoadJSON()' le fichier n'existe pas"
         default:
             res = ""
         }
