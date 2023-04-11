@@ -35,10 +35,15 @@ class Visualiser_TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
         // on charge la liste de mots TRIES
-        var ligne : [[String]] = AppDelegate.tmots.trierStrList()
+        // on affiche les mots chargés a partir des fichiers json
+        /// on ne trie pas pour l'instant
+
+        var ligne : [Mot] = Les_Mots(AppDelegate.mots).tousLesMots
+
+        
         // Configure the cell...
-        cell.textLabel?.text = ligne[0][indexPath.row].uppercased()
-        cell.detailTextLabel?.text = ligne[0][indexPath.row]
+        cell.textLabel?.text = ligne[indexPath.row].get_en_français().uppercased()
+        cell.detailTextLabel?.text = ligne[indexPath.row].get_en_anglais()
         return cell
     }
     

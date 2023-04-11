@@ -21,7 +21,7 @@ class Ajouter_Mot_View_Controller: UIViewController {
     }
     
 
-    
+    // add word
     @IBAction func ajouter_mot_btn() {
         // on valoriste tout si tout va bien :
         if (self.mot_en_field.text != nil && self.mot_fr_field.text != nil){
@@ -31,6 +31,11 @@ class Ajouter_Mot_View_Controller: UIViewController {
             self.err.text = "erreur saisie invalide"
         }
         
+    }
+    //save & quit
+    @IBAction func sauvegarderEtQuitterBtn() {
+        // écrase le fichier et réécrit tout
+        AppDelegate.tmots.write()
     }
     
     

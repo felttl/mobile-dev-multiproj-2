@@ -10,37 +10,43 @@ import UIKit
 class Chercher_Mot_view_Controller: UIViewController {
 
     // prises entrées
-    @IBOutlet weak var tf_word_input: UITextField!
-    @IBOutlet weak var lab_traduit: UILabel!
-    @IBOutlet weak var str_err: UILabel!
+    @IBOutlet weak var tfWordInput: UITextField!
+    @IBOutlet weak var labTraduit: UILabel!
+    @IBOutlet weak var strErr: UILabel!
     // données
-    public var input_texte : String = ""
-    public var choix_langue : Bool = false
+    public var inputTexte : String = ""
+    public var choixLangue : Bool = false
         
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        // on charge les données du JSON si elles ne sont pas les mêmes
+        if (AppDelegate.mots != AppDelegate.tmots.tousLesMots){
+            AppDelegate.tmots
+        }
+        
     }
+    
     
     
     // "obtenir la traduction"
     @IBAction func traduire() {
         // mise a jour des données :
         // si l'utilisateur a saisi du texte
-        if (self.tf_word_input.text != nil){
-            self.input_texte = tf_word_input.text!
-            var mot_a_chercher = Mot(self.input_texte, "")
+        if (self.tfWordInput.text != nil){
+            self.inputTexte = tfWordInput.text!
+            var mot_a_chercher = Mot(self.inputTexte, "")
             AppDelegate.mots.append(mot_a_chercher)
             if (Les_Mots(AppDelegate.mots).chercherMot(mot_a_chercher) == nil){
-                self.lab_traduit.text = "none"
-                self.str_err.text = AppDelegate.tmots.getTxtErr()
+                self.labTraduit.text = "none"
+                self.strErr.text = AppDelegate.tmots.getTxtErr()
             } else {
-                self.lab_traduit.text = AppDelegate.tmots.chercherMot(mot_a_chercher)!.get_en_anglais()
+                self.labTraduit.text = AppDelegate.tmots.chercherMot(mot_a_chercher)!.get_en_anglais()
             }
-            self.str_err.text = "validé avec succés"
+            self.strErr.text = "validé avec succés"
         } else {
             // erreur
-            self.str_err.text = "erreur champs manquant"
+            self.strErr.text = "erreur champs manquant"
         }
     }
     

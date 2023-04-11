@@ -18,33 +18,55 @@ class Les_Mots: Codable { // créée un "les mots" pour simplifier les tri de gr
     
     
     // MARK: - JSON FILE
-    public func write(_ tousLesMots: [Mot]){
+    public func write(){
         // singleton
         let leFM = FileManager.default
         let lesURL = leFM.urls(for: .documentDirectory, in: .userDomainMask)
-        let laPremUrl = lesURL .first!
+        let laPremUrl = lesURL.first!
         let monURL = laPremUrl.appendingPathComponent("data.json")
-        let dataSavedCoded = try? JSONEncoder().encode(tousLesMots)
-        // créé fichier
+        let dataSavedCoded = try? JSONEncoder().encode(self.tousLesMots)
+        // créé fichier avec les données codées
         FileManager.default.createFile(atPath: monURL.path, contents: dataSavedCoded, attributes: nil)
-        exit(0)
+        //exit(0)
     }
     
     
     // créer le fichier et ce qui est nécessaire si ce n'est pas le cas
     // sinon charge dirrectement les donnnées avec loadJSON
     public func preLoadJSON()->[Mot]{
+        
         var resultMots : [Mot] = []
         let monUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("data.json")
         if (FileManager.default.fileExists(atPath: "data.json")){
             resultMots = self.loadJSON(monUrl)
         } else {
+            print("le fichier n'existe pas on le créé")
+            // on créé le fichier
+            self.write()
             
-            print()
-            exit(0)
         }
         return resultMots
     }
+    
+    // compare la liste d'objets avec une autre liste
+    public func Pareil(_ estPareil: [Mot])->Bool{
+        var res : Bool = true
+        var cpt : Int = 0
+        // pas la même taille on considère que c'est différent
+        // pas la même taille on considère que c'est différent
+        if (self.tousLesMots.count != estPareil.count){
+            res = false
+        }
+        while (!res && cpt < self.tousLesMots.count){
+            if (estPareil[cpt].get_en_anglais() != self.tousLesMots[cpt].get_en_anglais() ||
+                estPareil[cpt].get_en_français() != self.tousLesMots[cpt].get_en_français()){
+                res = false
+            }
+            cpt += 1
+        }
+        return res
+    }
+    
     
     public func loadJSON(_ uneurl: URL)->[Mot]{
         do {
