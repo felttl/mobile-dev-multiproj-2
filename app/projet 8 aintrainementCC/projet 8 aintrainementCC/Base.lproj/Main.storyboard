@@ -144,7 +144,6 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Sauvegarder et Quitter"/>
                                 <connections>
-                                    <action selector="tapSuirEnregistrer" destination="A6E-gn-Ufu" eventType="touchUpInside" id="wVH-4u-zuS"/>
                                     <action selector="tapSurEnregistrer" destination="A6E-gn-Ufu" eventType="touchUpInside" id="AbV-4l-484"/>
                                 </connections>
                             </button>
