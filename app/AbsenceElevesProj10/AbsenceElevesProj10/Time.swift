@@ -10,11 +10,11 @@ import Foundation
 // add modulus to int class (advanced modulus for negative numbers)
 // i must creating /modify % operator
 extension Int{
-    // better than % symbol (for negative numbers)
+  // better than % symbol (for negative numbers)
   public static func mod(_  num:Int, _ mod : Int)->Int{
       var res : Int
-      let times : Float = Float(num) / Float(mod)
-      res = num - Int(floor(Float(times)/Float(mod))) * mod
+      let times : Float = floor(Float(num) / Float(mod))
+      res = num - Int(times) * mod
       return res
   }
 }

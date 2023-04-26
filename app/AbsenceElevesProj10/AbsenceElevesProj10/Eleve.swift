@@ -13,7 +13,7 @@ class TimeCodable : Time, Codable{}
 
 
 // Classe pour la gestion d'élève(s)
-class Eleve : Codable{
+class Eleve : Codable{//Codable protocol not class
     
     private var Nom : String?
     private var Prenom : String?
@@ -22,10 +22,11 @@ class Eleve : Codable{
     private var Numero : Int?
     private var Color : Float = 0 // gradient de couleur pour savoir si il est souvent la ou non
     private var Notes : [Float]?
+    private var nbAbsences : Int = 0  // But de l'application
     private var InfosPlus : String? // stockAge commentaires
 
     // default
-    public init(_ Nom: String, _ Prenom:String, _ Age: TimeCodable, _ Classe: String, _ Numero: Int, _ infoPlus: String){
+    public init(_ Nom: String, _ Prenom:String, _ Age: TimeCodable, _ Classe: String, _ Numero: Int,_ nbAbsence:Int, _ infoPlus: String){
         if (Nom != "" && Prenom != "" && Classe != "" && Numero >= 0){
             self.Nom = Nom
             self.Prenom = Prenom
@@ -34,10 +35,16 @@ class Eleve : Codable{
             self.Numero = Numero
             self.Numero = Numero
             self.InfosPlus = infoPlus
+            self.nbAbsences = nbAbsence
         } else {
             print("données invalides")
         }
 
+    }
+    
+    // calcule le gradient pour pouvoir avoir une couleure
+    public func calcGradient(){
+        // contenu
     }
     
     
@@ -49,9 +56,7 @@ class Eleve : Codable{
     
     
     
-    
-    
-    
+    // poser question : comment on fait l'attribut color déja ?
     
     
     
@@ -89,6 +94,45 @@ class Eleve : Codable{
     public func getInfosPlus()->String?{
         return self.InfosPlus
     }
+    public func getNBAbscences()->Int{
+        return self.nbAbsences
+    }
+    
+    // MARK: - Edit/set methods ->
+        
+    // a voir si c'est intéressant de faire ça (pour tous)
+    
+    public func setNom(_ nom: String){
+        self.Nom = nom
+    }
+    public func setPrenom(_ prenom:String){
+        self.Nom = prenom
+    }
+    public func setAge(_ age: TimeCodable){
+        self.Age = age
+    }
+    public func setClasse(_ classe: String){
+        self.Classe = classe
+    }
+    public func setNumero(_ numero: Int){
+        self.Numero = numero
+    }
+    // pas de set avec color car fonctionnement interne
+    public func setNotes(_ notes: [Float]){
+        self.Notes = notes
+    }
+    public func setInfosPlus(_ infos:String){
+        self.InfosPlus = infos
+    }
+    public func setNBAbscences(_ nbabsences:Int){
+        if (nbabsences >= 0){
+            self.nbAbsences = nbabsences
+        } else {
+            print("nombre d'absence invalide")
+            exit(0)
+        }
+    }
+
     
 }
 
