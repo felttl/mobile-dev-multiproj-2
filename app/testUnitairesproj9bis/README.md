@@ -1,3 +1,3 @@
 
 
-<img src="./XCTestFramework.jpg">
+<img src="./XCTestFramework.png">
