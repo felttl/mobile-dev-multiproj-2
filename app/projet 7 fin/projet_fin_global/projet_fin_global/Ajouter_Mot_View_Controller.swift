@@ -36,6 +36,7 @@ class Ajouter_Mot_View_Controller: UIViewController {
     @IBAction func sauvegarderEtQuitterBtn() {
         // écrase le fichier et réécrit tout
         AppDelegate.tmots.write()
+        self.err.text = AppDelegate.tmots.getTxtErr()
     }
     
     

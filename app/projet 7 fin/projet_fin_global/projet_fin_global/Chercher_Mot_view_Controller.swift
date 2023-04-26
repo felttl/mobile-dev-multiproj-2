@@ -21,10 +21,25 @@ class Chercher_Mot_view_Controller: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         // on charge les données du JSON si elles ne sont pas les mêmes
-        if (AppDelegate.mots != AppDelegate.tmots.tousLesMots){
-            AppDelegate.tmots
+        if (!self.estPareil(AppDelegate.tmots.tousLesMots)){
+            AppDelegate.mots = Les_Mots(AppDelegate.tmots.tousLesMots).preLoadJSON()
         }
         
+    }
+    
+    private func estPareil(_ listeDeMots: [Mot])->Bool{
+        var res : Bool = true
+        if (listeDeMots.count == AppDelegate.mots.count){
+            var cpt : Int = 0
+            while (res && cpt < listeDeMots.count){
+                if (listeDeMots[cpt].get_en_anglais() != AppDelegate.mots[cpt].get_en_anglais() ||
+                    listeDeMots[cpt].get_en_français() != AppDelegate.mots[cpt].get_en_français()){
+                    res = false
+                }
+                cpt += 1
+            }
+        } else {res = false}
+        return res
     }
     
     

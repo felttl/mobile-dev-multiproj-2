@@ -33,7 +33,7 @@ class AfficherSkieursTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "idListSkieurs", for: indexPath)
         let lesLignes = AppDelegate.getTousLesSkieurs()
         // Configure the cell...
         cell.textLabel?.text = "Dossard : \(lesLignes[indexPath.row].getNumDossard()), nom : \(lesLignes[indexPath.row].getNomSkieur())"

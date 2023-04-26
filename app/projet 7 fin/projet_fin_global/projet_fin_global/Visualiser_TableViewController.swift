@@ -22,7 +22,7 @@ class Visualiser_TableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
+        ///#warning Incomplete implementation, return the number of sections
         return 1
     }
 
@@ -38,7 +38,7 @@ class Visualiser_TableViewController: UITableViewController {
         // on affiche les mots chargés a partir des fichiers json
         /// on ne trie pas pour l'instant
 
-        var ligne : [Mot] = Les_Mots(AppDelegate.mots).tousLesMots
+        var ligne : [Mot] = AppDelegate.mots
 
         
         // Configure the cell...

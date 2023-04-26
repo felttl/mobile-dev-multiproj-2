@@ -157,6 +157,7 @@ class Les_Mots: Codable { // créée un "les mots" pour simplifier les tri de gr
         default:
             res = ""
         }
+        // self.err = 0 //  ?
         return res
     }
     
