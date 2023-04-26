@@ -14,7 +14,7 @@ extension Int{
   public static func mod(_  num:Int, _ mod : Int)->Int{
       var res : Int
       let times : Float = Float(num) / Float(mod)
-      res = num - Int(floor(times)) * mod
+      res = num - Int(floor(Float(times)/Float(mod))) * mod
       return res
   }
 }
