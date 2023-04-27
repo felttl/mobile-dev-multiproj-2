@@ -98,6 +98,22 @@ class Eleve : Codable{//Codable protocol not class
         return self.nbAbsences
     }
     
+    
+    // renvoie toutes les informatiosn en lignes (comme une fiche)
+    public func getAllInfos()->String{
+        var res : String = ""
+        res += "Nom : \(self.getNom() ?? "")\n"
+        res += "Prenom : \(self.getPrenom() ?? "")\n"
+        res += "Age : \(self.getAge()?.getDate() ?? "")\n"
+        // except classname (show in sections)
+        res += "Numero : \(String((self.getNumero() == nil) ? "" : self.getNumero()))\n"
+        res += ""
+        return res
+        
+    }
+    
+    
+    
     // MARK: - Edit/set methods ->
         
     // a voir si c'est intéressant de faire ça (pour tous)

@@ -57,20 +57,24 @@ class GroupeEleve{
     // trie le groupe d'élèves selon leurs classes
     public func trieParClasse(){
         var res : [Eleve] = []
-        for i in 0...self.listeEleves.count-1{
-            for classe in self.listeEleves{
-                if (self.listeEleves[i].getClasse() != nil && self.listeEleves[i].getClasse()! == classe){
+        var cpt1 : Int = 0
+        var cpt2 : Int = 0
+        var carry : Bool = true
+        while(carry && cpt1 == self.listeEleves.count){
+            while (cpt2 < self.listeClasses.count && carry){
+                if(self.listeEleves[cpt1].getClasse() != nil && self.listeEleves[cpt2].getClasse()! == self.listeClasses[cpt2]){
                     // on ajoute
-                    res.append(self.listeEleves[i])
-                } else{
+                    res.append(self.listeEleves[cpt2])
+                } else {
                     print("on ne peut pas trier les élèves car certains n'ont pas de classe")
-                    
+                    carry = false
                 }
-
+                cpt2 += 1
             }
+            cpt2 = 0
+            cpt1 += 1
         }
         self.listeEleves = res
-        
     }
     
     // permet de diminuer la complexité de calcul pour le trie par classe (moins long)
@@ -79,12 +83,24 @@ class GroupeEleve{
         // éviter les doublons
         for unEleve in self.listeEleves{
             // si on l'a pas déja on l'ajoute
-            if (Tools.getFirstIndex(unEleve.getClasse(), self.listeClasses) == nil){
+            if (Tools.getFirstIndex(unEleve.getClasse()!, self.listeClasses) == nil){
                 self.listeClasses.append(unEleve.getClasse()!)
             }
         }
         
     }
+    
+    // MARK: - Get Methods
+    
+    public func getlisteEleve()->[Eleve]{
+        return self.listeEleves
+    }
+    public func getlisteClasses()->[String]{
+        return self.listeClasses
+    }
+    
+    
+    
 
     
     

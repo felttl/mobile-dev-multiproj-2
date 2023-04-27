@@ -11,10 +11,14 @@ import CoreData
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    // pour un établissement spécifique
+    public static var leGroupeDEleves : GroupeEleve = GroupeEleve([])
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+
+        // on charge les données
+        
         return true
     }
 

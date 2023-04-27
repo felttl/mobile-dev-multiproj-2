@@ -29,28 +29,22 @@ class Tools{  // abstract #noData
         return res
     }
     // on peut comparer des valeurs avec des types différents ?
-    // car il risque d'y avoir beaucoupde fonctions pour chaques types sinon !!!!!!
-    public static func SuperGetFirstIndex(_ of: Any, _ contenant : [Any])->Any?{
-        var res : Any? = nil
+    // car il risque d'y avoir beaucoup de fonctions pour chaques types sinon !!!!!!
+    public static func getFirstIndex(_ of: Int, _ contenant : [Int])->Int?{
+        var res : Int? = nil
         for (i, comp) in contenant.enumerated(){
             if (of == comp){
                 res = i
-            }// type Any cannot conform to RawPresentable
+            }// type Any cannot conform to RawPresentable (of any type : (Any == [Any][Int], never done))
         }
         return res
     }
-    // return first index into the list ONLY FOR INT TYPE
-    // if not found return nil
-    public static func getFirstIndex(_ elem:Int, _ contenant : [Int])->Int?{
+    public static func getFirstIndex(_ of: String, _ contenant : [String])->Int?{
         var res : Int? = nil
-        var carry : Bool = true
-        var cpt : Int = 0
-        while(carry && cpt < contenant.count){
-            if (elem == contenant[cpt]){
-                res = cpt
-                carry = false
+        for (i, comp) in contenant.enumerated(){
+            if (of == comp){
+                res = i
             }
-            cpt += 1
         }
         return res
     }
@@ -58,7 +52,7 @@ class Tools{  // abstract #noData
     
     // max of float list
     public static func max(_ content:[Float])->Float{
-        var res : Float
+        var res : Float = content[0]
         if (content.count > 0){
             var maxv:Float=content[0]
             for i in 0...content.count-1{if (content[i] > maxv){maxv = content[i]}}
@@ -67,7 +61,7 @@ class Tools{  // abstract #noData
     }
     // max of int list
     public static func max(_ content:[Int])->Int{
-        var res : Int
+        var res : Int = content[0]
         if (content.count > 0){
             var maxv:Int=content[0]
             for i in 0...content.count-1{if (content[i] > maxv){maxv = content[i]}}
@@ -75,7 +69,7 @@ class Tools{  // abstract #noData
         };return res
     }
     public static func min(_ content:[Float])->Float{
-        var res : Float
+        var res : Float = content[0]
         if (content.count > 0){
             var maxv:Float=content[0]
             for i in 0...content.count-1{if (content[i] < maxv){maxv = content[i]}}
@@ -84,7 +78,7 @@ class Tools{  // abstract #noData
     }
     // max of int list
     public static func min(_ content:[Int])->Int{
-        var res : Int
+        var res : Int = content[0]
         if (content.count > 0){
             var maxv:Int=content[0]
             for i in 0...content.count-1{if (content[i] < maxv){maxv = content[i]}}
