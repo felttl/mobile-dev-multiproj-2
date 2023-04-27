@@ -99,7 +99,8 @@ class Eleve : Codable{//Codable protocol not class
     }
     
     
-    // renvoie toutes les informatiosn en lignes (comme une fiche)
+    /// renvoie toutes les informatiosn en lignes (comme une fiche)
+    /// (les informations a afficher dans une section classe pour l'eleve)
     public func getAllInfos()->String{
         var res : String = ""
         res += "Nom : \(self.getNom() ?? "")\n"

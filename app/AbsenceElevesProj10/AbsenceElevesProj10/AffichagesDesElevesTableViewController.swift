@@ -37,7 +37,7 @@ class AffichagesDesElevesTableViewController: UITableViewController {
         let lignes = AppDelegate.leGroupeDEleves.getlisteEleve()
         // Configure the cell...
         cell.textLabel?.text = sections[indexPath.section]
-        cell.detailTextLabel?.text = lignes[indexPath.row].get()
+        cell.detailTextLabel?.text = lignes[indexPath.row].
 
         return cell
     }
