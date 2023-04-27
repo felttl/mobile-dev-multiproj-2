@@ -20,25 +20,32 @@ class AffichagesDesElevesTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
+    /// renvoie le nombre de sections (ici ce seront les noms de classes)
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // on affichera la liste des éléves par secontion de nom de "classes"
-        return AppDelegate.leGroupeDEleves.getlisteClasses().count-1
+        // on affichera la liste des éléves par secotion de nom de "classes"
+        return AppDelegate.leGroupeDEleves.getlisteClasses().count
     }
-
+    /// renvoie le nombre de ligne de chaque sections
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return AppDelegate.leGroupeDEleves.getlisteEleve().count-1
+        return AppDelegate.leGroupeDEleves.getlisteEleve().count
     }
 
-    
+    /// ajoute chaque type de données dans les parties correspondantes de chaque cellules
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "affichageDesElevesParClasses", for: indexPath)
         let sections = AppDelegate.leGroupeDEleves.getlisteClasses()
         let lignes = AppDelegate.leGroupeDEleves.getlisteEleve()
         // Configure the cell...
         cell.textLabel?.text = sections[indexPath.section]
-        cell.detailTextLabel?.text = lignes[indexPath.row].
-
+        cell.detailTextLabel?.text = lignes[indexPath.row].getAllInfos()
+        // colorer la cellule
+        let laCouleur = lignes[indexPath.row].calcGradientAbsences()
+        cell.backgroundColor = UIColor(
+            displayP3Red: CGFloat(Double(laCouleur[0])),
+            green: CGFloat(Double(laCouleur[1])),
+            blue: CGFloat(Double(laCouleur[2])),
+            alpha: CGFloat(Double(laCouleur[3]))
+        )
         return cell
     }
     

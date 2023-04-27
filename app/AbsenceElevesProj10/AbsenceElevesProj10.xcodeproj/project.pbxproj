@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8E0476C229FA836B00185885 /* AffichagesDesElevesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E0476C129FA836B00185885 /* AffichagesDesElevesTableViewController.swift */; };
+		8E46DAA329FAED800091A3A1 /* AjouterEleveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E46DAA229FAED800091A3A1 /* AjouterEleveViewController.swift */; };
 		8E955C8E29F96DE30047DE45 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E955C8D29F96DE30047DE45 /* Tools.swift */; };
 		8EA26BAA29F9064D00B2EC45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA26BA929F9064D00B2EC45 /* AppDelegate.swift */; };
 		8EA26BAC29F9064D00B2EC45 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA26BAB29F9064D00B2EC45 /* SceneDelegate.swift */; };
@@ -45,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		8E0476C129FA836B00185885 /* AffichagesDesElevesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffichagesDesElevesTableViewController.swift; sourceTree = "<group>"; };
+		8E46DAA229FAED800091A3A1 /* AjouterEleveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AjouterEleveViewController.swift; sourceTree = "<group>"; };
 		8E955C8D29F96DE30047DE45 /* Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 		8EA26BA629F9064D00B2EC45 /* AbsenceElevesProj10.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AbsenceElevesProj10.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EA26BA929F9064D00B2EC45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				8EA26BAB29F9064D00B2EC45 /* SceneDelegate.swift */,
 				8EA26BAD29F9064D00B2EC45 /* ViewController.swift */,
 				8EA26BAF29F9064D00B2EC45 /* Main.storyboard */,
+				8E46DAA229FAED800091A3A1 /* AjouterEleveViewController.swift */,
 				8E0476C129FA836B00185885 /* AffichagesDesElevesTableViewController.swift */,
 				8EA26BB529F9064D00B2EC45 /* Assets.xcassets */,
 				8EA26BB729F9064D00B2EC45 /* LaunchScreen.storyboard */,
@@ -299,6 +302,7 @@
 				8EA26BE829F90BA000B2EC45 /* GroupeEleve.swift in Sources */,
 				8EA26BDD29F9067F00B2EC45 /* Eleve.swift in Sources */,
 				8EA26BAC29F9064D00B2EC45 /* SceneDelegate.swift in Sources */,
+				8E46DAA329FAED800091A3A1 /* AjouterEleveViewController.swift in Sources */,
 				8E955C8E29F96DE30047DE45 /* Tools.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
