@@ -99,8 +99,30 @@ class GroupeEleve{
         return self.listeClasses
     }
     
+    // MARK: - JSON management files :
+    //  pas besoin de coder la liste des classes des élèves car on possède déja la liste
+    //  des élèves et les données sont dedans
+    /// write data into json file(s) ("data.json" "classnames.json")
+    public func write(){
+        // singleton
+        let leFM = FileManager.default
+        let lesURL = leFM.urls(for: .documentDirectory, in: .userDomainMask)
+        let laPremUrl = lesURL.first!
+        let monURL = laPremUrl.appendingPathComponent("data.json")
+        let jsonDataSavedCoded : Data? = try! JSONEncoder().encode(self.getlisteEleve())
+        FileManager.default.createFile(atPath: monURL.path, contents: jsonDataSavedCoded, attributes: nil)
+    }
     
-    
+//    private var listeEleves : [Eleve] = []
+//    private var listeClasses : [String] = []
+    private func decodeList(_ toDecode: [Data?])->String{
+        var res : String = ""
+        for cde in toDecode{
+            let data0 = try! JSONEncoder().encode(cde)
+            res += String(data: data0, encoding: .utf8) ?? ""
+        }
+        return res
+    }
 
     
     

@@ -34,13 +34,13 @@ class Eleve : Codable{//Codable protocol not class
             self.Age = Age
             self.Classe = Classe
             self.Numero = Numero
-            self.Numero = Numero
             self.InfosPlus = infoPlus
             self.nbAbsences = nbAbsence
+            self.Notes = []
         } else {
             print("données invalides")
+            exit(0)
         }
-
     }
         
     /// calcule le gradient pour pouvoir avoir une couleur proportionelle a l'absence de l'élève
