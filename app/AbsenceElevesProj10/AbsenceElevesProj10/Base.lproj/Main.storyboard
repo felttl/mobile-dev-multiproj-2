@@ -163,11 +163,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" maximumValue="1000000000" translatesAutoresizingMaskIntoConstraints="NO" id="Id9-xo-wOt">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="1000000000" translatesAutoresizingMaskIntoConstraints="NO" id="Id9-xo-wOt">
                                 <rect key="frame" x="28" y="389" width="94" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="updateStepperValueOnclick:" destination="Rb1-zE-ho5" eventType="valueChanged" id="rfp-6u-OYU"/>
+                                    <action selector="updateStepperValueOnclick" destination="Rb1-zE-ho5" eventType="valueChanged" id="Qac-bX-Crb"/>
                                 </connections>
                             </stepper>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J5n-Cx-YBp">
@@ -200,14 +200,43 @@
                                     <action selector="ajouterEleveListe:" destination="Rb1-zE-ho5" eventType="touchUpInside" id="FlJ-Kp-59r"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="shG-EM-5M0">
+                                <rect key="frame" x="158" y="667" width="79" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Ajouter"/>
+                                <connections>
+                                    <action selector="submit" destination="Rb1-zE-ho5" eventType="touchUpInside" id="o0N-9x-bc9"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="classe de l'étudiant" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4HA-Ii-vmB">
+                                <rect key="frame" x="106" y="501" width="183" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="agF-ee-juB">
+                                <rect key="frame" x="16" y="530" width="347" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CRh-EC-4w2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="4ur-mM-x9R"/>
+                    <tabBarItem key="tabBarItem" title="ajouter eleve" id="4ur-mM-x9R"/>
                     <connections>
+                        <outlet property="AddInfoIN" destination="IT6-kc-zqU" id="hPD-Wr-Az3"/>
+                        <outlet property="DateNaissanceIN" destination="oMx-yw-6tQ" id="JrH-j1-rno"/>
+                        <outlet property="NomIN" destination="RN0-MC-SmG" id="Eev-Rz-vNA"/>
+                        <outlet property="PrenomIN" destination="XlS-Qf-glG" id="g6b-66-tiL"/>
+                        <outlet property="classeIN" destination="agF-ee-juB" id="8Cp-IC-qYG"/>
                         <outlet property="modifierNbAbsences" destination="Id9-xo-wOt" id="P5r-uZ-uea"/>
                         <outlet property="nbOutAbsences" destination="J5n-Cx-YBp" id="fJW-XI-dAZ"/>
+                        <outlet property="numEtudiantIN" destination="8cu-ZZ-0Qe" id="kMy-C3-r8v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gXn-Qn-dPR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

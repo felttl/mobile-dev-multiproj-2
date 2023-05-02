@@ -24,7 +24,7 @@ class GroupeEleve{
     public func trieParNomAtoZ(){
         var res : [Eleve] = []
         // poids des lettres
-        var poidsL : [Character] = Array("abcdefghijklmnopqrstuvwxyz".uppercased()+"abcdefghijklmnopqrstuvwxyz")
+        let poidsL : [Character] = Array("abcdefghijklmnopqrstuvwxyz".uppercased()+"abcdefghijklmnopqrstuvwxyz")
         var lesPoids : [Int] = [] // value, indexes
         for unEleve in self.listeEleves{
             // l'eleve doit avoir un nom !

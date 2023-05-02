@@ -26,7 +26,9 @@ class Eleve : Codable{//Codable protocol not class
     private var nbAbsences : Int = 0  // But de l'application
     private var InfosPlus : String? // stockAge commentaires
 
+    // MARK: - constructor
     // default
+    /// constructeur de la classe
     public init(_ Nom: String, _ Prenom:String, _ Age: TimeCodable, _ Classe: String, _ Numero: Int,_ nbAbsence:Int, _ infoPlus: String){
         if (Nom != "" && Prenom != "" && Classe != "" && Numero >= 0){
             self.Nom = Nom

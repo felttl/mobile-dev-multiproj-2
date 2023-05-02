@@ -7,7 +7,7 @@
 
 import Foundation
 
-// permet de triser des éléments avec un ouple de valeur
+// permet de trier des éléments avec un ouple de valeur
 // id et contenu que l'on veut trier
 struct Twice{
     var id : Int
@@ -84,6 +84,34 @@ class Tools{  // abstract #noData
             for i in 0...content.count-1{if (content[i] < maxv){maxv = content[i]}}
             res = maxv
         };return res
+    }
+    
+    /// permet de savoir si la chaine contient uniquement des nombres ou non
+    /// renvoie faux si elle contient des lettre ou tout autre élément différent des nombres
+    public static func containsOnlyInt(_ string: String)->Bool{
+        var res : Bool = true
+        let num : [Character] = Array("0123456789")
+        let tabCompare : [Character] = Array(string)
+        // code here
+        var cpt : Int = 0
+        while (res && cpt < num.count){
+            var cpt0 : Int = 0
+            var carry2 : Bool = true
+            while (carry2 && cpt0 < num.count){
+                if (num[cpt0] == tabCompare[cpt]){
+                    carry2 = false
+                }
+                cpt0 += 1
+            }
+            if (carry2){
+                res = false
+            }
+            cpt += 1
+        }
+        return res
+        
+        
+        
     }
     
     

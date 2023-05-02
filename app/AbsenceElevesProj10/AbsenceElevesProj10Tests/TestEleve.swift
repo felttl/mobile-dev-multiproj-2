@@ -6,7 +6,7 @@
 //
 
 import XCTest
-
+@testable import AbsenceElevesProj10
 final class TestEleve: XCTestCase {
 
     override func setUpWithError() throws {

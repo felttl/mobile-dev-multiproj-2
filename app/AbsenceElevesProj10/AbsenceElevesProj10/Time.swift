@@ -50,8 +50,9 @@ extension Int{
     public var months : Int
     public var years : Int
 
-
-    // bouild an object
+     // MARK: - constructors
+     
+    // build an object
     public init(_ ms : Int=0,_ seconds : Int=0,_ minutes : Int=0,_ hours : Int=0,_ days : Int=0,_ months : Int=0,_ years : Int=0){
         self.ms = ms
         self.seconds = seconds
@@ -72,7 +73,7 @@ extension Int{
         self.months = 0
         self.years = 0
     }
-  // create now time object
+   // create now time object
    public init(){
         self.hours   = (Calendar.current.component(.hour, from: Date()))
         self.minutes = (Calendar.current.component(.minute, from: Date()))
@@ -81,6 +82,16 @@ extension Int{
         self.days = (Calendar.current.component(.day, from: Date()))
         self.months = (Calendar.current.component(.month, from: Date()))
         self.years = (Calendar.current.component(.year, from: Date()))
+    }
+    /// extract data with and date object
+    public init(_ dateChoose: Date){
+         self.ms = 0
+         self.seconds = (Calendar.current.component(.hour, from: dateChoose))
+         self.minutes = (Calendar.current.component(.minute, from: dateChoose))
+         self.hours = (Calendar.current.component(.hour, from: dateChoose))
+         self.days = (Calendar.current.component(.day, from: dateChoose))
+         self.months = (Calendar.current.component(.month, from: dateChoose))
+         self.years = (Calendar.current.component(.year, from: dateChoose))
     }
 
 
