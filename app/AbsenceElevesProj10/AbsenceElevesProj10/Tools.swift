@@ -94,10 +94,10 @@ class Tools{  // abstract #noData
         let tabCompare : [Character] = Array(string)
         // code here
         var cpt : Int = 0
-        while (res && cpt < num.count){
+        while (res && cpt < tabCompare.count-1){
             var cpt0 : Int = 0
             var carry2 : Bool = true
-            while (carry2 && cpt0 < num.count){
+            while (carry2 && cpt0 < num.count-1){
                 if (num[cpt0] == tabCompare[cpt]){
                     carry2 = false
                 }

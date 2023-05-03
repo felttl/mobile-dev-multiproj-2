@@ -27,7 +27,8 @@ class AjouterEleveViewController: UIViewController {
     
     // inputs "prises"
     /// controle le nombre d'absences
-    @IBOutlet weak var modifierNbAbsences: UIStepper!
+
+    @IBOutlet weak var modifNbAbsSteppers: UIStepper!
     @IBOutlet weak var nbOutAbsences: UITextField!
     
     @IBOutlet weak var NomIN: UITextField!
@@ -43,7 +44,7 @@ class AjouterEleveViewController: UIViewController {
     
     
     // sys variables
-    private var lastNbAbsence : Int = 0
+    private var interneNbAbsence : Int = 0
     
     /// sur le chargement de la view
     override func viewDidLoad() {
@@ -85,7 +86,7 @@ class AjouterEleveViewController: UIViewController {
                     ageEleve,
                     self.classeIN.text ?? rien,
                     Int(self.numEtudiantIN.text ?? "0")!,
-                    self.lastNbAbsence,
+                    self.interneNbAbsence,
                     self.AddInfoIN.text ?? "")
         
         return res
@@ -98,26 +99,28 @@ class AjouterEleveViewController: UIViewController {
     }
     
     
-    /// met a jour la valeur du UIstepper et la met en sortie
-    @IBAction func updateStepperValueOnclick() {
-        // si j'arrive a récupérer une variable int je le fais sinon je met la dernière variable valide dedans
-        if (self.nbOutAbsences.text != nil){
-            // si c'est une entrée valable
+    /// quand on entre une valeur au field
+    @IBAction func btnNbAbsEntered(_ sender: UITextField) {
+        // le texte est vide
+        if (self.nbOutAbsences.text == ""){
+            // on met la value du stepper dedans
+            self.nbOutAbsences.text = "\(self.interneNbAbsence)"
+        } else {
+            // on analyse que l'entrée est correcte
             if (Tools.containsOnlyInt(self.nbOutAbsences.text!)){
-                self.lastNbAbsence = Int(self.nbOutAbsences.text!)!
-                self.modifierNbAbsences.value = Double(self.nbOutAbsences.text!)!
+                // on copie en stockage et on duplique la valeur
+                self.interneNbAbsence = Int(self.nbOutAbsences.text!)!
+                self.modifNbAbsSteppers.value = Double(self.nbOutAbsences.text!)!
             } else {
                 print("ce n'est pas une entrée valide")
             }
-            //on met la valeur récupérée dans le nombre de personnes sauvés
-            self.lastNbAbsence = Int(self.nbOutAbsences.text ?? "0") ?? 0
-        } else {
-            // sinon on met le nombre de personnes sauvés dans le stepper value
-            self.nbOutAbsences.text = "\(self.lastNbAbsence)"
-            // on syncronise le stepper et le field
-            self.modifierNbAbsences.value = Double(self.lastNbAbsence)
         }
-        self.nbOutAbsences.text = String(self.lastNbAbsence)
+    }
+    
+    /// met a jour la valeur du UIstepper et la met en sortie
+    @IBAction func updateStepperValueOnclick(_ sender: UIStepper) {
+        self.interneNbAbsence = Int(sender.value)
+        self.nbOutAbsences.text = "\(Int(self.modifNbAbsSteppers.value))"
     }
     
     // problème a résoudre -> si ma chaine est vide et que je clique sur le

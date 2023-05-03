@@ -20,7 +20,35 @@ class GroupeEleve{
         self.chargeClasses(listeDesleves)
     }
     
-    // trie la liste par ordre alphabétique de nom (de A à Z)
+    
+    /// cherche un élève avec son numéro étudiant
+    public func ChercherEleve(_ numEtud: Int)->Int?{
+        var res : Int? = nil
+        var cpt : Int = 0
+        var carry : Bool = true
+        while (carry && cpt < self.listeEleves.count-1){
+            if (numEtud == self.listeEleves[cpt].getNumero()){
+                res = cpt
+                carry = false  // diminuer la complexité
+            }
+            cpt += 1
+        }
+        return res
+    }
+    
+    /// cherche un élève avec son nom (renvoie une liste de plusieur étudiants si plusieurs ont le même nom)
+    public func ChercherEleve(_ NomEtudiant: String)->[Int?]{
+        var res : [Int?] = []
+        for i in 0...self.listeEleves.count-1{
+            if (NomEtudiant == self.listeEleves[i].getNom()){
+                res.append(i)
+            }
+        }
+        return res
+    }
+    
+    
+    /// trie la liste par ordre alphabétique de nom (de A à Z)
     public func trieParNomAtoZ(){
         var res : [Eleve] = []
         // poids des lettres
@@ -97,6 +125,9 @@ class GroupeEleve{
     }
     public func getlisteClasses()->[String]{
         return self.listeClasses
+    }
+    public func editEleve(_ idx: Int,_ lEleve: Eleve){
+        self.listeEleves[idx] = lEleve
     }
     
     // MARK: - JSON management files :

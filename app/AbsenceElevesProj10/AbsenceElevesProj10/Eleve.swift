@@ -44,6 +44,23 @@ class Eleve : Codable{//Codable protocol not class
             exit(0)
         }
     }
+    /// constructeur avec des données pouvant être vides
+    public init(_ Nom: String?, _ Prenom:String?, _ Age: TimeCodable?, _ Classe: String?, _ Numero: Int?,_ nbAbsence:Int, _ infoPlus: String?){
+            self.Nom = Nom
+            self.Prenom = Prenom
+            self.Age = Age
+            self.Classe = Classe
+            self.Numero = Numero
+            self.InfosPlus = infoPlus
+            self.nbAbsences = nbAbsence
+            self.Notes = []
+    }
+    
+    
+    
+    
+    
+    
         
     /// calcule le gradient pour pouvoir avoir une couleur proportionelle a l'absence de l'élève
     /// return style: [Int, Int, Int, Int]
