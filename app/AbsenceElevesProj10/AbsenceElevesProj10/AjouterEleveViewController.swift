@@ -6,8 +6,9 @@
 //
 
 import UIKit
-
-
+import SwiftUI
+// upload file xlsx
+import MobileCoreServices
 
 //    private var Nom : String?
 //    private var Prenom : String?
@@ -27,7 +28,6 @@ class AjouterEleveViewController: UIViewController {
     
     // inputs "prises"
     /// controle le nombre d'absences
-
     @IBOutlet weak var modifNbAbsSteppers: UIStepper!
     @IBOutlet weak var nbOutAbsences: UITextField!
     
@@ -36,15 +36,20 @@ class AjouterEleveViewController: UIViewController {
     @IBOutlet weak var DateNaissanceIN: UIDatePicker!
     @IBOutlet weak var numEtudiantIN: UITextField!
     @IBOutlet weak var AddInfoIN: UITextField!
-    
     @IBOutlet weak var classeIN: UITextField!
     
-    
-    
+    // bouton pour ajouter un fichier
+    @IBOutlet weak var importingButtonExl: UIImageView!
+    // bouton pour afficher plus d'informations sur le contenu de fichier xlsx
+    @IBOutlet weak var showMoreInfoFile: UIImageView!
     
     
     // sys variables
     private var interneNbAbsence : Int = 0
+    
+    // variable image
+    @IBOutlet weak var showMoreInfoIMG: UIImageView!
+    
     
     /// sur le chargement de la view
     override func viewDidLoad() {
@@ -95,7 +100,24 @@ class AjouterEleveViewController: UIViewController {
     /// envoie les données dans l'app delegate (en ajoutant un groupe d'élève)
     @IBAction func submit() {
         // sauvegarde des données + mise a jour de la liste d'objets swift
-        
+        // uniquement si champs obligatoires complétés
+        if (self.NomIN.text != "" && self.PrenomIN.text != "" && self.numEtudiantIN.text != ""){
+            let nouvelEleve : Eleve = Eleve(
+                self.NomIN.text,
+                self.PrenomIN.text,
+                TimeCodable(self.DateNaissanceIN.date),
+                self.classeIN.text,
+                Int(self.numEtudiantIN.text!),
+                self.interneNbAbsence,
+                self.AddInfoIN.text
+            )
+            AppDelegate.leGroupeDEleves.ajouterEleve(nouvelEleve)
+            print("données correctement ajoutées")
+        } else {
+            // on affiche une erreur
+            print("il manque un/des champ(s)")
+        }
+
     }
     
     
@@ -126,5 +148,19 @@ class AjouterEleveViewController: UIViewController {
     // problème a résoudre -> si ma chaine est vide et que je clique sur le
     // stepper bah la condition if on ne rentre même pas dedans et on rentre dans le suivant
 
+    
+    //MARK: Excel file load
+    /// importation d'un fichier excel
+    @IBAction func importFiles(_ sender: Any) {
+        // see (of any problems) : https://adam.garrett-harris.com/2021-08-21-providing-access-to-directories-in-ios-with-bookmarks/
+        let ExcelDocument = UIDocumentPickerViewController()
+        
+    }
+    
+    /// lire les données d'un fichier
+    private func extractDataFromExelFile(_ data: Any){
+        // remplissage des données (ajoute des élèves au groupe)
+    }
 
+    
 }

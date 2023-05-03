@@ -18,9 +18,10 @@ class ModifierEleveViewController: UIViewController {
     
     @IBOutlet weak var NouveauNomEtudiant: UITextField!
     @IBOutlet weak var NouveauPrenomEtudiant: UITextField!
-    
     @IBOutlet weak var NouveauDateNaissanceEtudiant: UIDatePicker!
-    
+    @IBOutlet weak var NouvelleClasseEtudiant: UITextField!
+    @IBOutlet weak var NouveauNbAbsence: UITextField!
+    @IBOutlet weak var NouveauInfoPlus: UITextField!
     
     // afficher les messages d'erreur de saisie
     @IBOutlet weak var MssageErreur: UILabel!
@@ -37,28 +38,41 @@ class ModifierEleveViewController: UIViewController {
     @IBAction func updateEleve() {
         // etape 1 On cherche l'élève
         if (self.RechercheNumEtudiant.text != nil && self.RechercheNumEtudiant.text != ""){
-            var idxEleve : Int? = AppDelegate.leGroupeDEleves.ChercherEleve(Int(self.RechercheNumEtudiant.text!)!)
+            let idxEleve : Int? = AppDelegate.leGroupeDEleves.ChercherEleve(Int(self.RechercheNumEtudiant.text!)!)
             if (idxEleve == nil){
                 // si on a pas trouvé on fais pas de changement et on renvoie un msg
                 self.MssageErreur.text = "Eleve Introuvable"
             } else {
                 // on remplace si on trouve on renvoie aucun msg
-                var unEleve : Eleve
-                unEleve = Eleve(
-                    self.NouveauNomEtudiant.text,
-                    self.NouveauPrenomEtudiant.text,
-                    TimeCodable(self.NouveauDateNaissanceEtudiant.date),
-                    <#T##Classe: String##String#>,
-                    <#T##Numero: Int##Int#>,
-                    <#T##nbAbsence: Int##Int#>,
-                    <#T##infoPlus: String##String#>)
-                AppDelegate.leGroupeDEleves.editEleve(idxEleve!, unEleve)
-                self.MssageErreur.text = ""
+                if (self.NouveauNomEtudiant.text != "" && self.RechercheNumEtudiant.text != "" && self.NouveauNomEtudiant.text != ""){
+                    // les champs minimums doivent être présents
+                    var unEleve : Eleve
+                    unEleve = Eleve(
+                        self.NouveauNomEtudiant.text,
+                        self.NouveauPrenomEtudiant.text,
+                        TimeCodable(self.NouveauDateNaissanceEtudiant.date),
+                        self.NouvelleClasseEtudiant.text,
+                        Int(self.NouveauNumEtudiant.text!)!,
+                        Int(self.NouveauNbAbsence.text!)!,
+                        self.NouveauInfoPlus.text)
+                    AppDelegate.leGroupeDEleves.editEleve(idxEleve!, unEleve)
+                    self.MssageErreur.text = ""
+                } else {
+                    self.MssageErreur.text = "champ(s) manquant(s)"
+                }
             }
             self.MssageErreur.text = "le numéro de l'étudiant doit être valide"
         } else {
-            
+            self.MssageErreur.text = "on a besoin d'un minimum d'informations pour chercher l'étudiant"
         }
+        
+        
+        
+        
+        
+        
+        
+        
         
     }
     

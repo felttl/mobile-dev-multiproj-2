@@ -109,10 +109,46 @@ class Tools{  // abstract #noData
             cpt += 1
         }
         return res
-        
-        
-        
     }
+    /// quick sort
+    public static func quickSort(_ liste : [Int])->[Int]{
+        // tri réccursif
+        if (liste.count < 2){
+            return liste
+        } else {
+            let med : Int = liste[Int(liste.count-1/2)]
+            var left : [Int] = []
+            var right : [Int] = []
+            for num in liste{
+                if (num < med){
+                    left.append(num)
+                } else {
+                    right.append(num)
+                }
+            }
+            // on regroupe
+            return self.quickSort(left)+self.quickSort(right)
+        }
+
+    }
+
+    /// transforme une liste en nombre
+    /// plus il y a de A dans le texte et plus le nombre est élevé
+    private func pondèreChaine(_ liste : [String])->[Int]{
+        var res : [Int] = []
+        let poids : [Character] = Array("aà@bcdeéêèfghîijklmnoôpqrstuû vwxyz".uppercased()+"aà@bcdeéêèfghîijklmnoôpqrstuû").reversed()
+        var valeur : Int
+        for mot in liste{
+            valeur = 0
+            for lettre in mot{
+                valeur += poids.firstIndex(of: lettre)! // not nil
+            }
+            res.append(valeur)
+        }
+        return res
+    }
+        
+    
     
     
 }

@@ -64,25 +64,30 @@ class Eleve : Codable{//Codable protocol not class
         
     /// calcule le gradient pour pouvoir avoir une couleur proportionelle a l'absence de l'élève
     /// return style: [Int, Int, Int, Int]
-    public func calcGradientAbsences()->[Int]{
+    public func calcGradientAbsences()->[Float]{
         var rgbA : [Int]
         // jamais la : 255,0,0,1
         // moyennement la : 255,255,0,1
         // tous le temps la : 0,255,0,1
         
+        
+        // les trois doivent être entre 0 et 1 (Float) c'est écrit dans la partie affichage partie docstring
+        
+        
         // comparer pour faire un produit en croix
-        let comp : Int = self.getNBAbscences()
+        let comp : Float = Float(self.getNBAbscences())
         switch comp {
             // de tout le temps présent a moyennement
             case self.ABSIntervalle[0]...ABSIntervalle[1]/2:
-                rgbA = [Int(255*comp/100),255,0,1]
+            rgbA = [comp*self.ABSIntervalle[1]/100,1.0,0.0,1.0]
             // viens de moyennement souvent a jamais
             case self.ABSIntervalle[1]/2...self.ABSIntervalle[1]:
-                rgbA = [255,Int(255*comp/100),0,1]
+                            rgbA = [1.0,Int(255*comp/100),0,1]
         default:
            // n'est jamais venu (absences tendent vers l'infini)
-            rgbA = [255,0,0,1]
+            rgbA = [1,0,0,1]
         }
+        rgbA = [comp*Float(self.ABSIntervalle[1])/100]
         return rgbA
     }
 
@@ -179,6 +184,14 @@ class Eleve : Codable{//Codable protocol not class
     public func setAbsencesIntervall(_ min: Int, _ max:Int){
         self.ABSIntervalle = [min, max]
     }
+    
+    
+
+ 
+    
+    
+    
+    
 
 }
 

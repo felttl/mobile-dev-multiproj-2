@@ -1,7 +1,6 @@
 {
   "images" : [
     {
-      "filename" : "ExcelIcon.jpeg",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -10,6 +9,7 @@
       "scale" : "2x"
     },
     {
+      "filename" : "Capture d’écran 2023-05-03 à 18.11.01.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

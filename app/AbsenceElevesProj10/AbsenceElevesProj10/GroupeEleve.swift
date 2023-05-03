@@ -129,6 +129,9 @@ class GroupeEleve{
     public func editEleve(_ idx: Int,_ lEleve: Eleve){
         self.listeEleves[idx] = lEleve
     }
+    public func ajouterEleve(_ E : Eleve){
+        self.listeEleves.append(E)
+    }
     
     // MARK: - JSON management files :
     //  pas besoin de coder la liste des classes des élèves car on possède déja la liste
@@ -146,13 +149,32 @@ class GroupeEleve{
     
 //    private var listeEleves : [Eleve] = []
 //    private var listeClasses : [String] = []
-    private func decodeList(_ toDecode: [Data?])->String{
-        var res : String = ""
-        for cde in toDecode{
-            let data0 = try! JSONEncoder().encode(cde)
-            res += String(data: data0, encoding: .utf8) ?? ""
+    /// insert json data into data class space
+    public func preLoadJson(){
+        // url du singleton (le premier)
+        let monUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("data.json")
+        // si le fichier existe :
+        if (FileManager.default.fileExists(atPath: "data.json")){
+            self.loadJSON(monUrl)
+        } else {
+            print("le fichier n'existe pas on le créé")
+            self.write()
         }
-        return res
+        
+        
+    }
+    
+    /// load json data into list of Eleve content
+    private func loadJSON(_ url: URL){
+        do {
+            let data = try Data(contentsOf: url)
+            let decoder = JSONDecoder()// on utilise la classe comme la class Tools
+            // insertions des données
+            self.listeEleves = try decoder.decode([Eleve].self, from: data)
+        } catch {
+            print("problème de chargement des données")
+        }
+        self.listeEleves = []
     }
 
     
