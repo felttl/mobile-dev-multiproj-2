@@ -34,8 +34,40 @@ final class TestEleve: XCTestCase {
     
     //MARK: - Custom tests
     
-    
-    
+    /// tester si le gradient de couleur s'effectue correctement
+    func testGradient() throws {
+        // rd
+        let objEleve = Eleve(
+            "jule",
+             "aiuh",
+             TimeCodable(Date()),
+             nil,
+            Int.random(in: Int(1e6)...Int(1e7-1)),
+             3, // nb absences
+             nil
+        )
+
+        // test avec 3 (30%) doit être inférieur a la moyenne( donc orange ou rouge)
+        Eleve.setNewIntervalle([4, 14])
+        var gdt : [Float] = objEleve.calcGradientAbsences()
+        XCTAssertEqual(gdt, [0.3, 1, 0, 1.0])
+        
+        objEleve.setNBAbscences(5)
+        gdt = objEleve.calcGradientAbsences()
+        XCTAssertEqual(gdt, [1, 1, 0, 1])
+        
+        objEleve.setNBAbscences(9)
+        gdt = objEleve.calcGradientAbsences()
+        XCTAssertEqual(gdt, [1, 0.9, 0, 1])
+        
+        // tests aléatoires
+        let aleaChoisi : Int = Int.random(in: 0...4)
+        objEleve.setNBAbscences(aleaChoisi)
+        gdt = objEleve.calcGradientAbsences()
+        XCTAssertEqual(gdt, [Float(aleaChoisi)/10, 1, 0, 1])
+        // test avec intervalle aléatoires
+    }
+
     
     
     

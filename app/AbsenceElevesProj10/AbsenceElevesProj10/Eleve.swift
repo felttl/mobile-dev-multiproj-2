@@ -21,7 +21,7 @@ class Eleve : Codable{//Codable protocol not class
     private var Classe : String?
     private var Numero : Int?
     private var Color : Float = 0 // gradient de couleur pour savoir si il est souvent la ou non
-    private var ABSIntervalle : [Int] = [0, 20] // 20 absence par mois élevé
+    private static var ABSIntervalle : [Int] = [0, 20] // 20 absence par mois élevé
     private var Notes : [Float]
     private var nbAbsences : Int = 0  // But de l'application
     private var InfosPlus : String? // stockAge commentaires
@@ -55,39 +55,7 @@ class Eleve : Codable{//Codable protocol not class
             self.nbAbsences = nbAbsence
             self.Notes = []
     }
-    
-    
-    
-    
-    
-    
-        
-    /// calcule le gradient pour pouvoir avoir une couleur proportionelle a l'absence de l'élève
-    /// return style: [Int, Int, Int, Int]
-    public func calcGradientAbsences()->[Float]{
-        var rgbA : [Float]
-        // jamais la : 255,0,0,1
-        // moyennement la : 255,255,0,1
-        // tous le temps la : 0,255,0,1
-        
-        
-        // les trois doivent être entre 0 et 1 (Float) c'est écrit dans la partie affichage partie docstring
-        
-        
-        // comparer pour faire un produit en croix
-        var comp : Int = self.getNBAbscences()
-        // si absintervall est pas dans l'intervalle
-        if (comp < self.ABSIntervalle[0]){
-            comp = self.ABSIntervalle[0]
-        } else if (comp > self.ABSIntervalle[0]){
-            comp = self.ABSIntervalle[1]
-        }
-        rgbA = [Float(comp)*Float(self.ABSIntervalle[1])/100, ]
-        return rgbA
-    }
-
-    
-    
+       
     
     // MARK: - Get methods ->
     
@@ -119,7 +87,7 @@ class Eleve : Codable{//Codable protocol not class
     public func getNBAbscences()->Int{
         return self.nbAbsences
     }
-    
+
     
     /// renvoie toutes les informatiosn en lignes (comme une fiche)
     /// (les informations a afficher dans une section classe pour l'eleve)
@@ -173,16 +141,39 @@ class Eleve : Codable{//Codable protocol not class
             exit(0)
         }
     }
-    
-    // 3 paramètre : Color, nbAbsences et self.calcGradient()->intintintint
-    /// permet de définir/éditer les intervalles de couleurs en fonction du nombre d'absences
-    public func setAbsencesIntervall(_ min: Int, _ max:Int){
-        self.ABSIntervalle = [min, max]
+    /// set [min, max] absence intervalle
+    public static func setNewIntervalle(_ minmax : [Int]){
+        if (minmax.count != 2){
+            print("il doit y avoir 2 paramètres uniquement")
+        } else {
+            Eleve.ABSIntervalle = minmax
+        }
     }
-    
-    
 
- 
+    //MARK: - other methods/functions
+
+    /// calcule le gradient pour pouvoir avoir une couleur proportionelle a l'absence de l'élève
+    /// return style: [Float, Float, Float, Float]
+    /// (fonction a portée d'objet utilisant une variable de classe)
+    ///  (+ pratique)(car l'intervalle d'absence (toléré) doit être partagé entre tous les élèves)
+    public func calcGradientAbsences()->[Float]{
+        var rgbA : [Float] = [1.0,1.0,0,1.0]
+        // FULL COLOR FORMAT
+        // jamais la :          255,000,0,1 (trop d'absence) +∞
+        // moyennement la :     255,255,0,1
+        // tous le temps la :   000,255,0,1 (aucune absence) 0
+        // on convertit tout entre 0 et 1
+        let comp : Int = self.getNBAbscences()
+        let milieu : Float = abs(Float(Int(Eleve.ABSIntervalle[0])-Int(Eleve.ABSIntervalle[1])))/2
+        // si absintervall est pas dans l'intervalle
+        if (Float(comp) < milieu){
+            rgbA[0] = Float(comp)/Float(Eleve.ABSIntervalle[1]-Eleve.ABSIntervalle[0])
+        } else if (Float(comp) > milieu){
+            rgbA[1] = Float(Float(comp)/Float(Eleve.ABSIntervalle[1]-Eleve.ABSIntervalle[0]))
+        }
+        return rgbA
+    }
+
     
     
     

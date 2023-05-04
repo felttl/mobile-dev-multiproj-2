@@ -13,6 +13,7 @@ class Chercher_Mot_view_Controller: UIViewController {
     @IBOutlet weak var tfWordInput: UITextField!
     @IBOutlet weak var labTraduit: UILabel!
     @IBOutlet weak var strErr: UILabel!
+    
     // données
     public var inputTexte : String = ""
     public var choixLangue : Bool = false
@@ -48,9 +49,9 @@ class Chercher_Mot_view_Controller: UIViewController {
     @IBAction func traduire() {
         // mise a jour des données :
         // si l'utilisateur a saisi du texte
-        if (self.tfWordInput.text != nil){
+        if (self.tfWordInput.text != ""){
             self.inputTexte = tfWordInput.text!
-            var mot_a_chercher = Mot(self.inputTexte, "")
+            let mot_a_chercher = Mot(self.inputTexte, "")
             AppDelegate.mots.append(mot_a_chercher)
             if (Les_Mots(AppDelegate.mots).chercherMot(mot_a_chercher) == nil){
                 self.labTraduit.text = "none"

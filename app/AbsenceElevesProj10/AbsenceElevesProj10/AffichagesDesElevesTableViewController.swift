@@ -35,9 +35,8 @@ class AffichagesDesElevesTableViewController: UITableViewController {
         cell.textLabel?.text = sections[indexPath.section]
         cell.detailTextLabel?.text = lignes[indexPath.row].getAllInfos()
         // colorer la cellule
-
-        
         let laCouleur = lignes[indexPath.row].calcGradientAbsences()
+        // color values : 0<=value<=1 (limited range)
         cell.contentView.backgroundColor = UIColor(
             displayP3Red: CGFloat(Double(laCouleur[0])),
             green: CGFloat(Double(laCouleur[1])),

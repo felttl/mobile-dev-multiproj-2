@@ -184,9 +184,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="rechercher mot" id="DCH-S9-591"/>
                     <connections>
-                        <outlet property="lab_traduit" destination="6nK-iC-ELb" id="F9n-gU-izp"/>
-                        <outlet property="str_err" destination="Spg-yg-oNJ" id="5Rl-2h-nDM"/>
-                        <outlet property="tf_word_input" destination="fnd-nQ-tm8" id="hqW-qh-SBQ"/>
+                        <outlet property="labTraduit" destination="6nK-iC-ELb" id="ORW-Mc-Dmy"/>
+                        <outlet property="strErr" destination="Spg-yg-oNJ" id="REH-bd-vtm"/>
+                        <outlet property="tfWordInput" destination="fnd-nQ-tm8" id="Mkf-pe-XFv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Zu-tE-CON" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -202,7 +202,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="bUN-4P-4QV" detailTextLabel="mHk-EM-1w5" style="IBUITableViewCellStyleSubtitle" id="uTM-ZM-TO6">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AffichageMot" textLabel="bUN-4P-4QV" detailTextLabel="mHk-EM-1w5" style="IBUITableViewCellStyleSubtitle" id="uTM-ZM-TO6">
                                 <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uTM-ZM-TO6" id="G1Z-bn-eG0">

@@ -33,7 +33,7 @@ class Visualiser_TableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AffichageMot", for: indexPath)
         // on charge la liste de mots TRIES
         // on affiche les mots chargés a partir des fichiers json
         /// on ne trie pas pour l'instant

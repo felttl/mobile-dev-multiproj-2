@@ -37,6 +37,7 @@ class Ajouter_Mot_View_Controller: UIViewController {
         // écrase le fichier et réécrit tout
         AppDelegate.tmots.write()
         self.err.text = AppDelegate.tmots.getTxtErr()
+        exit(0)
     }
     
     
