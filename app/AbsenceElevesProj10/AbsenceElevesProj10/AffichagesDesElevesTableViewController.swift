@@ -12,6 +12,7 @@ class AffichagesDesElevesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // on syncronise les données des autres tables avec AppDelegate
+        
     }
 
     // MARK: - Table view data source
@@ -34,8 +35,10 @@ class AffichagesDesElevesTableViewController: UITableViewController {
         cell.textLabel?.text = sections[indexPath.section]
         cell.detailTextLabel?.text = lignes[indexPath.row].getAllInfos()
         // colorer la cellule
+
+        
         let laCouleur = lignes[indexPath.row].calcGradientAbsences()
-        cell.backgroundColor = UIColor(
+        cell.contentView.backgroundColor = UIColor(
             displayP3Red: CGFloat(Double(laCouleur[0])),
             green: CGFloat(Double(laCouleur[1])),
             blue: CGFloat(Double(laCouleur[2])),

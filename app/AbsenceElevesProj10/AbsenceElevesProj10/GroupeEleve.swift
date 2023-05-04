@@ -10,7 +10,7 @@ import Foundation
 
 
 // créer des objets groupe d'eleve pour simplifier les opérations de tri d'jout etc.. d'élèves
-class GroupeEleve{
+class GroupeEleve: Codable{
     private var listeEleves : [Eleve] = []
     private var listeClasses : [String] = []
     
@@ -171,6 +171,7 @@ class GroupeEleve{
             let decoder = JSONDecoder()// on utilise la classe comme la class Tools
             // insertions des données
             self.listeEleves = try decoder.decode([Eleve].self, from: data)
+            print("données correctement chargées")
         } catch {
             print("problème de chargement des données")
         }

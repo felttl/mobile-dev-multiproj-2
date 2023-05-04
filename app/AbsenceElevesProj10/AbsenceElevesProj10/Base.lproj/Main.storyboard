@@ -287,7 +287,6 @@
         <!--Tab Bar Controller-->
         <scene sceneID="Y87-DL-JbH">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vEq-xi-wUP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tabBarController id="4h2-Uy-BSK" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="TF7-rC-2Wa">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
@@ -301,6 +300,7 @@
                         <segue destination="n2c-oN-22d" kind="relationship" relationship="viewControllers" id="5BE-df-kxP"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vEq-xi-wUP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-608" y="-166"/>
         </scene>
@@ -349,7 +349,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="oMx-yw-6tQ">
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="oMx-yw-6tQ">
                                 <rect key="frame" x="187" y="413" width="206" height="38"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </datePicker>
@@ -396,16 +396,6 @@
                                     <action selector="updateStepperValueOnclick:" destination="Rb1-zE-ho5" eventType="valueChanged" id="etK-DE-I8a"/>
                                 </connections>
                             </stepper>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J5n-Cx-YBp">
-                                <rect key="frame" x="146" y="529" width="231" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.83646406790000005" green="0.85185134340000002" blue="0.96689504380000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="btnNbAbsEntered:" destination="Rb1-zE-ho5" eventType="editingDidEnd" id="0dO-i0-5Fg"/>
-                                </connections>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="autres informations :" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UmH-Bc-LcX">
                                 <rect key="frame" x="113" y="571" width="183" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -483,6 +473,16 @@
                                 <rect key="frame" x="30" y="88" width="160" height="153"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J5n-Cx-YBp">
+                                <rect key="frame" x="146" y="529" width="231" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.83646406790000005" green="0.85185134340000002" blue="0.96689504380000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="btnNbAbsEntered:" destination="Rb1-zE-ho5" eventType="editingDidEnd" id="0dO-i0-5Fg"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CRh-EC-4w2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -494,6 +494,7 @@
                         <outlet property="NomIN" destination="RN0-MC-SmG" id="Eev-Rz-vNA"/>
                         <outlet property="PrenomIN" destination="XlS-Qf-glG" id="g6b-66-tiL"/>
                         <outlet property="classeIN" destination="agF-ee-juB" id="8Cp-IC-qYG"/>
+                        <outlet property="importingExelFile" destination="zdx-hr-wky" id="b7v-QV-zPE"/>
                         <outlet property="modifNbAbsSteppers" destination="Id9-xo-wOt" id="hhF-WX-qhW"/>
                         <outlet property="nbOutAbsences" destination="J5n-Cx-YBp" id="fJW-XI-dAZ"/>
                         <outlet property="numEtudiantIN" destination="8cu-ZZ-0Qe" id="kMy-C3-r8v"/>

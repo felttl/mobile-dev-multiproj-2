@@ -28,7 +28,7 @@ class Eleve : Codable{//Codable protocol not class
 
     // MARK: - constructor
     // default
-    /// constructeur de la classe
+    /// constructeur de la classe (overloaded)
     public init(_ Nom: String, _ Prenom:String, _ Age: TimeCodable, _ Classe: String, _ Numero: Int,_ nbAbsence:Int, _ infoPlus: String){
         if (Nom != "" && Prenom != "" && Classe != "" && Numero >= 0){
             self.Nom = Nom
@@ -44,7 +44,7 @@ class Eleve : Codable{//Codable protocol not class
             exit(0)
         }
     }
-    /// constructeur avec des données pouvant être vides
+    /// constructeur avec des données pouvant être vides (overloaded)
     public init(_ Nom: String?, _ Prenom:String?, _ Age: TimeCodable?, _ Classe: String?, _ Numero: Int?,_ nbAbsence:Int, _ infoPlus: String?){
             self.Nom = Nom
             self.Prenom = Prenom
@@ -65,7 +65,7 @@ class Eleve : Codable{//Codable protocol not class
     /// calcule le gradient pour pouvoir avoir une couleur proportionelle a l'absence de l'élève
     /// return style: [Int, Int, Int, Int]
     public func calcGradientAbsences()->[Float]{
-        var rgbA : [Int]
+        var rgbA : [Float]
         // jamais la : 255,0,0,1
         // moyennement la : 255,255,0,1
         // tous le temps la : 0,255,0,1
@@ -75,19 +75,14 @@ class Eleve : Codable{//Codable protocol not class
         
         
         // comparer pour faire un produit en croix
-        let comp : Float = Float(self.getNBAbscences())
-        switch comp {
-            // de tout le temps présent a moyennement
-            case self.ABSIntervalle[0]...ABSIntervalle[1]/2:
-            rgbA = [comp*self.ABSIntervalle[1]/100,1.0,0.0,1.0]
-            // viens de moyennement souvent a jamais
-            case self.ABSIntervalle[1]/2...self.ABSIntervalle[1]:
-                            rgbA = [1.0,Int(255*comp/100),0,1]
-        default:
-           // n'est jamais venu (absences tendent vers l'infini)
-            rgbA = [1,0,0,1]
+        var comp : Int = self.getNBAbscences()
+        // si absintervall est pas dans l'intervalle
+        if (comp < self.ABSIntervalle[0]){
+            comp = self.ABSIntervalle[0]
+        } else if (comp > self.ABSIntervalle[0]){
+            comp = self.ABSIntervalle[1]
         }
-        rgbA = [comp*Float(self.ABSIntervalle[1])/100]
+        rgbA = [Float(comp)*Float(self.ABSIntervalle[1])/100, ]
         return rgbA
     }
 

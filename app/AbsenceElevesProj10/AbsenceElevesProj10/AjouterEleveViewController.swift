@@ -44,6 +44,10 @@ class AjouterEleveViewController: UIViewController {
     @IBOutlet weak var showMoreInfoFile: UIImageView!
     
     
+    @IBOutlet weak var importingExelFile: UIButton!
+    
+    
+    
     // sys variables
     private var interneNbAbsence : Int = 0
     
