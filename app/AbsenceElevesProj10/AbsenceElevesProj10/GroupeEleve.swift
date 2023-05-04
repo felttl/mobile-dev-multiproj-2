@@ -143,7 +143,7 @@ class GroupeEleve: Codable{
         let lesURL = leFM.urls(for: .documentDirectory, in: .userDomainMask)
         let laPremUrl = lesURL.first!
         let monURL = laPremUrl.appendingPathComponent("data.json")
-        let jsonDataSavedCoded : Data? = try! JSONEncoder().encode(self.getlisteEleve())
+        let jsonDataSavedCoded = try? JSONEncoder().encode(self.getlisteEleve())
         FileManager.default.createFile(atPath: monURL.path, contents: jsonDataSavedCoded, attributes: nil)
     }
     
@@ -154,7 +154,7 @@ class GroupeEleve: Codable{
         // url du singleton (le premier)
         let monUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("data.json")
         // si le fichier existe :
-        if (FileManager.default.fileExists(atPath: "data.json")){
+        if (FileManager.default.fileExists(atPath: monUrl.path)){
             self.loadJSON(monUrl)
         } else {
             print("le fichier n'existe pas on le créé")

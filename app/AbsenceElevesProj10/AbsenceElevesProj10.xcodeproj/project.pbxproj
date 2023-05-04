@@ -25,6 +25,7 @@
 		8EA26BE229F9069F00B2EC45 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EA26BE129F9069F00B2EC45 /* XCTest.framework */; };
 		8EA26BE629F90ADE00B2EC45 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA26BE529F90ADE00B2EC45 /* Time.swift */; };
 		8EA26BE829F90BA000B2EC45 /* GroupeEleve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA26BE729F90BA000B2EC45 /* GroupeEleve.swift */; };
+		8EA3FBCC2A0427610091B23D /* UnitTestGroupeEleve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA3FBCB2A0427610091B23D /* UnitTestGroupeEleve.swift */; };
 		8ED883EA2A02523F008BF9A0 /* ModifierEleveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED883E92A02523F008BF9A0 /* ModifierEleveViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,7 @@
 		8EA26BE129F9069F00B2EC45 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		8EA26BE529F90ADE00B2EC45 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		8EA26BE729F90BA000B2EC45 /* GroupeEleve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupeEleve.swift; sourceTree = "<group>"; };
+		8EA3FBCB2A0427610091B23D /* UnitTestGroupeEleve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTestGroupeEleve.swift; sourceTree = "<group>"; };
 		8ED883E92A02523F008BF9A0 /* ModifierEleveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifierEleveViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -145,6 +147,7 @@
 			children = (
 				8EA26BC329F9064E00B2EC45 /* AbsenceElevesProj10Tests.swift */,
 				8EA26BDE29F9069200B2EC45 /* TestEleve.swift */,
+				8EA3FBCB2A0427610091B23D /* UnitTestGroupeEleve.swift */,
 			);
 			path = AbsenceElevesProj10Tests;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EA26BC429F9064E00B2EC45 /* AbsenceElevesProj10Tests.swift in Sources */,
+				8EA3FBCC2A0427610091B23D /* UnitTestGroupeEleve.swift in Sources */,
 				8EA26BDF29F9069200B2EC45 /* TestEleve.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
