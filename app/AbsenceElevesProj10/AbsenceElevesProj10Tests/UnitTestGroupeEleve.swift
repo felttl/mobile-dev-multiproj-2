@@ -64,10 +64,11 @@ final class UnitTestGroupeEleve: XCTestCase {
         )
         ungroupeEleve.trieParNomAtoZ()
         // on remplis une liste pour savoir si c'est correct
-        let testResultIntNum : [String] = []
-        for eleve in ungroupeEleve{
-            testResultIntStr
+        var testResultIntStr : [String] = []
+        for eleve in ungroupeEleve.getlisteEleve(){
+            testResultIntStr.append(eleve.getNom()!)
         }
+        XCTAssertEqual(testResultIntStr, ["abbana", "aurelie","cris"])
         
         
     }

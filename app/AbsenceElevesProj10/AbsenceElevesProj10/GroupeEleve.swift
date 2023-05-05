@@ -111,7 +111,7 @@ class GroupeEleve: Codable{
         // éviter les doublons
         for unEleve in self.listeEleves{
             // si on l'a pas déja on l'ajoute
-            if (Tools.getFirstIndex(unEleve.getClasse()!, self.listeClasses) == nil){
+            if (Tools.getFirstIndex(unEleve.getClasse(), self.listeClasses) == nil){
                 self.listeClasses.append(unEleve.getClasse()!)
             }
         }
