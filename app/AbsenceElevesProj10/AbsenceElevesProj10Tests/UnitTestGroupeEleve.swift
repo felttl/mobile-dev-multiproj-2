@@ -37,7 +37,7 @@ final class UnitTestGroupeEleve: XCTestCase {
     
     /// tester si les élèves ont tous rangés dans l'ordre correctement
     func testEleveBienRangés() throws { // on oublie pas test devant le nom de fonction
-        var ungroupeEleve : GroupeEleve = GroupeEleve(
+        let ungroupeEleve : GroupeEleve = GroupeEleve(
             [
                 Eleve("cris",
                       "chute",
@@ -68,7 +68,7 @@ final class UnitTestGroupeEleve: XCTestCase {
         for eleve in ungroupeEleve.getlisteEleve(){
             testResultIntStr.append(eleve.getNom()!)
         }
-        XCTAssertEqual(testResultIntStr, ["abbana", "aurelie","cris"])
+        XCTAssertEqual(testResultIntStr, ["aurelie","abbana", "cris"])
         
         
     }

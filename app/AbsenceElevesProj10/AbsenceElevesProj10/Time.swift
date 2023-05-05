@@ -24,7 +24,7 @@ extension Int{
 
 
  class Time{
-    // default region mod is ...
+    // default region mod is ...’
 
 
     public static var region_mod : [String] = ["GMT", "UTC", "CET"]
