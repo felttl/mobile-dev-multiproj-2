@@ -22,11 +22,11 @@ extension Int{
 
 
 
-
+ 
  class Time{
     // default region mod is ...
 
-
+ 
     public static var region_mod : [String] = ["GMT", "UTC", "CET"]
     public static let mods : [String] = ["Gregorian", "Maya"]
     public static var mod : String = "gregorian"
